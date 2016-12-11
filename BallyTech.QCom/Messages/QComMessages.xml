@@ -1,0 +1,1679 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE schema [
+  <!ENTITY includeExtractedEnumerations SYSTEM "QComMetadata.ExtractedEnumerations.xml">
+]>
+<schema xmlns="mailto:jhantin@ballytech.com?Subject=ExternalMessageCodeGenerator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="mailto:jhantin@ballytech.com?Subject=ExternalMessageCodeGenerator ../../../CodeGen/BallyTech.CodeGeneration.BinaryMessage/MessageSpec.xsd">
+  &includeExtractedEnumerations;
+  <enum name ="FunctionCodes" type="System.Byte">
+    <value name="None" value="0x00"/>
+    <value name="GeneralStatus" value="0x01"/>
+    <value name="SeekEgmBroadcastPoll" value="0xFC"/>
+    <value name="SeekEgmBroadcastResponse" value="0x20"/>
+    <value name ="NoteAcceptorStatusResponse" value ="0x04"/>
+    <value name ="ProgressiveMetersResponse" value ="0x07"/>
+    <value name ="ProgressiveConfigurationResponse" value ="0x08"/>
+    <value name ="BetMetersStatus" value ="0x09"/>
+    <value name ="Broadcast" value="0xFF"/>
+    <value name ="Event" value ="0x10"/>
+    <value name ="EgmGameConfigurationResponse" value ="0x13"/>
+    <value name ="EgmConfigurationResponse" value ="0x16"/>
+    <value name ="ProgramHashResponse" value ="0x19"/>    
+    <value name ="MeterGroupContributionResponse" value ="0x0C"/>
+    <value name ="EgmConfigurationRequest" value="0x33"/>
+    <value name ="EgmConfiguration" value="0x31"/>
+    <value name ="EgmGameConfiguration" value="0x2F"/>
+    <value name ="EctToEgmAcknowledgementResponse" value ="0x0E"/>
+    <value name ="EgmGameConfigurationChange" value="0x2E"/>
+    <value name ="EgmParameter" value="0x2D"/>
+    <value name ="ProgressiveConfiguration" value="0x2C"/>
+    <value name ="PurgeEventsPollResponse" value="0x0F"/>    
+    <value name ="ExternalJackpotInformation" value="0x2A"/>
+    <value name ="EctLockupResetPoll" value="0x24"/>
+    <value name ="ProgramHash" value="0x29"/>
+    <value name ="SystemLockup" value="0x27"/>
+    <value name ="CashTicketOutRequestAcknowledgement" value="0x21"/>
+    <value name ="CashTicketInRequest" value="0x20"/>
+    <value name ="CashOutRequest" value ="0x1E"/>
+    <value name ="EgmGeneralMaintenance" value ="0x1B"/>
+    <value name ="RequestAllLogged" value ="0x17"/>
+    <value name ="PurgeEvents" value ="0x16"/>
+    <value name ="NoteAcceptorMaintenance" value ="0x10"/>
+    <value name ="MultiGameVariationMetersResponse" value ="0x0A"/>
+    <value name ="PlayerChoiceMetersResponse" value ="0x0B"/>
+    <value name ="HopperTicketPrinterMaintenance" value ="0x0F"/>
+    <value name ="LinkedProgressiveAwardAcknowledged" value ="0x0E"/>
+    <value name ="EgmGeneralReset" value ="0x0C"/>
+    <value name ="EctToEgmPoll" value ="0x22"/>
+    <value name ="EctFromEgmLockupRequestPoll" value ="0x23"/>    
+    <value name ="SpecificPromotionalAdvisoryMessageA" value ="0x08"/>
+    <value name ="SpecificPromotionalAdvisoryMessageB" value ="0x07"/>
+    <value name ="EgmTowerLightMaintenance " value ="0x05"/>
+    <value name="CraneStatusResponse" value="0x06"/>
+    <value name="CraneConfigurationPoll" value="0x11"/>
+    <value name="CraneLockupAcknowledgementPoll" value="0x12"/>
+    <value name ="InvalidFunctionCode" value="0xE0"/>
+  </enum>
+
+  <enum name ="ExtendedBroadcastFunctionCodes" type="System.Byte">
+    <value name ="LinkedProgressiveJackpot" value ="0x02"/>
+    <value name ="GeneralPromotional" value ="0x03"/>
+    <value name ="EgmPollAddressConfiguration" value="0x04"/>
+    <value name ="SiteDetails" value ="0xFE"/>
+  </enum>
+
+  <enum name ="EventCodes" type="System.UInt16">
+    <value name ="CoinInFault" value="0x0004"/>
+    <value name ="ExcessiveCoinRejectsFault" value="0x0005"/>
+    <value name ="CoinInYoYo" value="0x0006"/>
+    <value name ="CashBoxOpticDiverterFault" value="0x0007"/>
+    <value name ="HopperLevelMismatch" value="0x0009"/>
+    <value name ="HopperEmpty" value="0x000A"/>
+    <value name ="HopperJammed" value="0x000B"/>
+    <value name ="HopperRunaway" value="0x000C"/>
+    <value name ="HopperDisconnected" value="0x000D"/>
+    <value name ="MechanicalMetersDisconnected" value="0x000E"/>
+    <value name ="ProgressiveControllerFault" value="0x0010"/>
+    <value name ="IOControllerFault" value="0x0011"/>
+    <value name ="TouchScreenFault" value="0x0015"/>
+    <value name ="ManufacturerSpecificFaultA" value="0x0017"/>
+    <value name ="ManufacturerSpecificFaultB" value="0x0018"/>
+    <value name ="ManufacturerSpecificEvent" value="0x0019"/>
+    <value name ="StepperReelFault" value="0x001A"/>
+    <value name ="BonusDeviceFault" value="0x001B"/>
+    <value name ="NoteStackerFullFault" value="0x0020"/>
+    <value name ="NoteAcceptorJammed" value="0x0021"/>
+    <value name ="NoteAcceptorDisconnected" value="0x0022"/>
+    <value name ="NoteAcceptorFault" value="0x0023"/>
+    <value name ="ExcessiveNoteTicketAcceptorRejectsFault" value="0x0024"/>
+    <value name ="NoteAcceptorYoYo" value="0x0025"/>
+    <value name ="LowNVRAMBattery" value="0x0027"/>
+    <value name ="LowPFDoorDetectionBattery" value="0x0028"/>
+    <value name ="EEPROMFault" value="0x0029"/>
+    <value name ="NVRAMCleared" value="0x002A"/>
+    <value name ="TicketPrinterPaperOut" value="0x002C"/>
+    <value name ="TicketPrinterPaperJam" value="0x002D"/>
+    <value name ="TicketPrinterGeneralFault" value="0x002E"/>
+    <value name ="CashTicketOutPrintFailure" value="0x002F"/>
+    <value name ="LowMemory" value="0x0030"/>
+    <value name ="PowerDownIncomplete" value="0x0031"/>
+    <value name ="AuxiliaryDisplayDeviceFailure" value="0x0032"/>
+    <value name ="PrimaryDisplayDeviceFailure" value="0x0033"/>
+    <value name ="TertiaryDisplayDeviceFailure" value="0x0034"/>
+    <value name ="LicenseKeyMissing" value="0x0035"/>
+    <value name ="LinkedProgressiveAward" value="0x1000"/>
+    <value name ="StandAloneProgressiveAwardV15" value="0x1001"/>
+    <value name ="LargeWin" value="0x1002"/>
+    <value name ="CancelCredit" value="0x1003"/>
+    <value name ="AllFaultsCleared" value="0x2000"/>
+    <value name ="LockUpCleared" value="0x2001"/>
+    <value name ="CancelCreditCancelled" value="0x2002"/>
+    <value name="QsimProtocolSimulator" value="0x2003"/>
+    <value name ="PrimaryEventQueueFull" value="0x2006"/>
+    <value name ="CommunicationsTimeOut" value="0x2007"/>
+    <value name ="GameVariationEnabled" value="0x2008"/>
+    <value name ="RtcRefreshed" value="0x2009"/>
+    <value name ="HopperRefillRecorded" value="0x200A"/>
+    <value name ="EgmPowerUp" value="0x200B"/>
+    <value name ="EgmPowerDown" value="0x200C"/>
+    <value name ="EgmMainDoorOpened" value="0x2010"/>
+    <value name ="EgmMainDoorClosed" value="0x2011"/>
+    <value name ="EgmCashBoxDoorOpened" value="0x2012"/>
+    <value name ="EgmCashBoxDoorClosed" value="0x2013"/>
+    <value name ="EgmProcessorDoorOpened" value="0x2014"/>
+    <value name ="EgmProcessorDoorClosed" value="0x2015"/>
+    <value name ="EgmBellyPanelDoorOpened" value="0x2016"/>
+    <value name ="EgmBellyPanelDoorClosed" value="0x2017"/>
+    <value name ="EgmNoteAcceptorDoorOpened" value="0x2020"/>
+    <value name ="EgmNoteAcceptorDoorClosed" value="0x2021"/>
+    <value name ="EgmNoteAcceptorStackerRemoved" value="0x2022"/>
+    <value name ="EgmNoteAcceptorStackerReturned" value="0x2023"/>
+    <value name ="EgmMechanicalMeterDoorOpened" value="0x204A"/>
+    <value name ="EgmMechanicalMeterDoorClosed" value="0x204B"/>
+    <value name ="EgmTopBoxDoorOpened" value="0x204C"/>
+    <value name ="EgmTopBoxDoorClosed" value="0x204D"/>
+    <value name ="CashBoxCleared" value="0x202A"/>
+    <value name ="NoteStackerCleared" value="0x2024"/>
+    <value name ="PowerOffProcessorDoorAccess" value="0x2025"/>
+    <value name ="PowerOffCashDoorAccess" value="0x2026"/>
+    <value name ="PowerOffMainDoorAccess" value="0x2027"/>
+    <value name ="PowerOffNoteAcceptorDoorAccess" value="0x2028"/>
+    <value name ="PowerOffMechanicalMeterDoorAccess" value="0x2029"/>
+    <value name ="CashTicketPrinted" value="0x2030"/>
+    <value name ="TicketPrinterInkLow" value="0x2031"/>
+    <value name ="NoteStackerFull" value="0x2032"/>
+    <value name ="NoteStackerHighLevelWarning" value="0x2033"/>
+    <value name ="TicketPrinterpaperLow" value="0x2034"/>
+    <value name ="InvalidEGMConfiguration" value="0x2035"/>
+    <value name ="InvalidGameConfiguration" value="0x2036"/>
+    <value name ="InvalidProgressiveConfiguration" value="0x2037"/>
+    <value name ="ProcessorOverTemperature" value="0x2040"/>
+    <value name ="CoolingFanLowRPM" value="0x2042"/>
+    <value name ="CallServiceTechnician" value="0x2043"/>
+    <value name ="RecoverableRAMCorruption" value="0x204E"/>
+    <value name ="NewPIDSessionStarted" value="0x204F"/>
+    <value name ="DenominationChanged" value="0x2050"/>
+    <value name ="InvalidDenomination" value="0x2051"/>
+    <value name ="HopperCalibrated" value="0x2052"/>
+    <value name ="ProgressiveConfigurationChanged" value="0x2053"/>
+    <value name ="TopNpPrizeHit" value="0x2054"/>
+    <value name ="InvalidTicketAcknowledgement" value="0x2055"/>
+    <value name ="PeriodMetersReset" value="0x2056"/>
+    <value name ="EXTJIPIconDisplayEnabled" value="0x2057"/>
+    <value name ="HopperOverpayAmount" value="0x2058"/>
+    <value name ="LicenseKeyDetected" value="0x2059"/>
+    <value name ="NonProductionLicenseKeyDetected" value="0x205A"/>
+    <value name ="EGMTicketInTimeOut" value="0x205B"/>
+    <value name ="EGMTicketInAborted" value="0x205C"/>
+    <value name ="EGMTransactionDeniedCreditLimitReached" value="0x205D"/>
+    <value name ="HopperPayout" value="0x3000"/>
+    <value name ="OldResidualCancelCreditLockUp" value="0x3001"/>
+    <value name ="SecondaryEventQueueFull" value="0x3002"/>
+    <value name ="NewGameSelected" value="0x3003"/>
+    <value name ="ECTfromEGMOld" value="0x3004"/>
+    <value name ="CRanEHit" value="0x3005"/>
+    <value name ="SystemLockupUserResponse" value="0x3006"/>
+    <value name ="StandAloneProgressiveAwardV16" value="0x3008"/>
+    <value name ="ECTFromEGMNew" value="0x3009"/>
+    <value name ="ResidualCancelCreditLockUp" value ="0x3010"/>
+    <value name ="CashTicketOutRequest" value="0x3011"/>
+    <value name ="CashTicketOutPrintSuccessful" value="0x3012"/>
+    <value name ="CashTicketIn" value="0x3013"/>
+    <value name="ReservedNewPIDSessionStarted" value="0x3014"/>
+    <value name="PIDSessionStopped" value="0x3015"/>
+  </enum>
+
+  <enum name ="StatusRequestFlag" type ="System.Byte" flags ="true">
+    <value name ="Reserved" value ="0x00"/>
+    <value name ="MachineEnableFlag" value ="0x20"/>
+    <value name ="GameConfigurationRequestFlag" value ="0x40"/>
+    <value name ="ResetPSN" value="0x80"/>
+  </enum>
+
+  <enum name ="GameConfigurationFlagCharacteristics" type ="System.Byte">
+    <value name ="None" value ="0x00"/>
+    <value name ="VariationLock" value ="0x40"/>
+    <value name ="GameEnableFlag" value="0x80"/>
+  </enum>
+
+  <enum name ="ProgressiveFlagCharacteristics" type ="System.Byte"> 
+    <value name ="LinkedProgressive" value="0x80"/>
+    <value name ="StandAloneProgressive" value="0x00"/>
+  </enum>
+
+  <enum name ="JurisdictionCharacteristics" type ="System.Byte">
+    <value name ="AuQldClubsHotels" value ="0x01"/>
+    <value name ="AuQdCasinos" value ="0x02"/>
+    <value name ="NewZealand" value ="0x03"/>
+    <value name ="Victoria" value="0x04"/>
+  </enum>
+
+  <enum name ="GameFlagCharacteristics" type ="System.Byte">
+    <value name ="Reserved" value ="0x00"/>
+    <value name ="GameEnableFlag" value="0x80"/>
+  </enum>
+
+  <enum name ="ParameterFlagCharacteristics" type ="System.Byte" flags ="true">
+    <value name ="None" value="0x00"/>
+    <value name="ReserveFeatureEnable" value="0x20"/>
+    <value name ="Autoplay" value ="0x40"/>
+    <value name ="CRLIMITmode" value ="0x80"/>
+  </enum>
+
+  <enum name ="ExternalJackpotFlagCharacteristics" type ="System.Byte" flags ="true">
+    <value name ="None" value ="0x00"/>
+    <value name ="LevelFlag0" value ="0x01"/>
+    <value name ="LevelFlag1" value ="0x02"/>
+    <value name ="LevelFlag2" value ="0x03"/>
+    <value name ="LevelFlag3" value ="0x04"/>
+    <value name ="LevelFlag4" value ="0x05"/>
+    <value name ="LevelFlag5" value ="0x06"/>
+    <value name ="LevelFlag6" value ="0x07"/>
+    <value name ="LevelFlag7" value ="0x08"/>
+    <value name ="DisplayFlag" value="0x80"/>
+  </enum>
+
+  <enum name ="ExternalJackpotIconDisplayFlagCharacteristics" type ="System.Byte" flags ="true">
+    <value name ="None" value ="0x00"/>
+    <value name ="IconDisplayFlag1" value ="0x01"/>
+    <value name ="IconDisplayFlag2" value ="0x02"/>
+    <value name ="IconDisplayFlag3" value ="0x04"/>
+    <value name ="IconDisplayFlag4" value ="0x08"/>
+  </enum>
+
+  <enum name="ExternalJackpotLevel" type="System.Byte" flags="true">
+    <value name="Level0" value="0x00"/>
+    <value name="Level1" value="0x01"/>
+    <value name="Level2" value="0x02"/>
+    <value name="Level3" value="0x03"/>
+    <value name="Level4" value="0x04"/>
+    <value name="Level5" value="0x05"/>
+    <value name="Level6" value="0x06"/>
+    <value name="Level7" value="0x07"/>
+  </enum>
+
+  <enum name="ExternalJackpotUnitModifierCharacteristics" type="System.Byte" flags="true">
+    <value name="Reserved" value="0x00"/>
+    <value name="UnitModifier" value="0x80"/>
+  </enum>
+
+  <enum name ="LockUpFlagCharacteristics" type ="System.Byte">
+    <value name ="ResetKeyDisable" value ="0x08"/>
+    <value name ="Continue" value ="0x10"/>
+    <value name ="Question" value ="0x20"/>
+    <value name ="LampTest" value ="0x40"/>
+    <value name ="Fanfare" value ="0x80"/>
+  </enum>
+
+  <enum name ="CashTicketOutFlagCharacteristics" type ="System.Byte">
+    <value name ="OnFailure" value ="0x40"/>
+    <value name ="Success" value ="0x80"/>
+  </enum>
+
+  <enum name ="MaintenanceBlockCharacteristics" type ="System.Byte" flags ="true">
+    <value name ="Group0Meters" value ="0x01"/>
+    <value name ="Group1Meters" value ="0x02"/>
+    <value name ="Group2Meters" value ="0x04"/>
+    <value name ="Reserved" value="0x00"/>
+  </enum>
+
+  <enum name ="MaintenanceFlagStatus" type ="System.Byte" flags="true">
+    <value name="None" value="0x00"/>
+    <value name ="NoteAcceptorStatus" value ="0x40"/>
+    <value name ="MachineEnableFlag" value ="0x80"/>
+  </enum>
+
+  <enum name ="NoteAcceptorFlagCharacteristics" type ="System.Byte" flags ="true">
+    <value name ="None" value ="0x00"/>
+    <value name ="Five" value ="0x01"/>
+    <value name ="Ten" value ="0x02"/>
+    <value name ="Twenty" value ="0x04"/>
+    <value name ="Fifty" value ="0x08"/>
+    <value name ="Hundred" value ="0x10"/>
+  </enum>
+
+  <enum name ="GeneralResetFlagCharacteristics" type ="System.Byte" flags ="true">
+    <value name ="None" value ="0x00"/>
+    <value name ="ClearCurrentFaultCondition" value ="0x01"/>
+    <value name ="ClearCurrentLockUpCCondition" value ="0x02"/>
+  </enum>
+
+  <enum name ="AdvisoryMessageFlagCharacteristics" type ="System.Byte" flags ="true">
+    <value name ="ProminenceFlag" value ="0x40"/>
+    <value name ="FanfareFlag" value ="0x80"/>
+  </enum>
+
+  <enum name ="GeneraFlagStatus" type ="System.Byte" flags="true">
+    <value name ="None" value ="0x00"/>
+    <value name ="PlayerChoiceMeterResponseRequest" value ="0x01"/>
+    <value name ="BetMetersResponseRequest" value ="0x02"/>
+    <value name ="ProgressiveConfigurationResponseRequest" value ="0x04"/>
+    <value name ="EGMGameConfigurationResponseRequestBit" value ="0x08"/>
+    <value name ="ProgressiveMetersResponseRequest1" value ="0x10"/>
+    <value name ="ProgressiveMetersResponseRequest2" value ="0x20"/>
+    <value name ="MultiGameVariationMetersResponseRequest" value ="0x40"/>
+    <value name ="GameEnableFlag" value ="0x80"/>
+  </enum>
+
+  <enum name ="GeneralStatusFlagA" type ="System.Byte" flags ="true">
+    <value name ="None" value ="0x00"/>
+    <value name ="MainDoor" value ="0x01"/>
+    <value name ="BoxDoor" value ="0x02"/>
+    <value name ="ProcessorDoor" value ="0x04"/>
+    <value name ="BellyPanelDoor" value ="0x08"/>
+    <value name ="NoteAcceptorDoor" value ="0x10"/>
+    <value name ="NoteStacker" value ="0x20"/>
+    <value name ="MechanicalMeterDoor" value ="0x40"/>
+    <value name ="TopBoxDoor" value ="0x80"/>
+  </enum>
+
+  <enum name ="GeneralStatusFlagB" type ="System.Byte" flags ="true">
+    <value name ="None" value ="0x00"/>
+    <value name ="FaultConditionActive" value ="0x01"/>
+    <value name ="AuditModeActive" value ="0x02"/>
+    <value name ="TestModeActive" value ="0x04"/>
+    <value name ="CashlessModeActive" value ="0x08"/>
+    <value name ="AwaitingCashTicketInRequestAcknowledgement" value ="0x10"/>
+  </enum>
+
+  <enum name ="EgmMainLineCurrentStatus" type ="System.Byte">
+    <value name ="None" value ="0x00"/>
+    <value name ="IdleMode" value ="0x01"/>
+    <value name ="PlayInProgress" value ="0x02"/>
+    <value name ="PlayInProgressFeature" value ="0x03"/>
+    <value name ="HopperCollect" value ="0x04"/>
+    <value name ="ResidualCreditRemovalFeature" value ="0x05"/>
+    <value name ="ResidualCancelCreditLockup" value ="0x06"/>
+    <value name ="CancelCreditLockup" value ="0x07"/>
+    <value name ="LargeWinLockup" value ="0x08"/>
+    <value name ="LinkedProgressiveAwardLockup" value ="0x09"/>
+    <value name ="Unused" value ="0x0A"/>
+    <value name ="SystemLockup" value ="0x0B"/>
+    <value name ="EctFromEGMLock" value ="0x0C"/>
+    <value name ="CRanELockup" value ="0x0D"/>
+    <value name ="PrintingCashTicketOut" value ="0x0F"/>
+    <value name ="CashTicketOutLockup" value ="0x10"/>
+    <value name ="PlayInProgressDoubleUp" value ="0x12"/>
+    <value name ="ReservedJackpotLockup" value ="0x13"/>
+    <value name ="ReservedPidDisplayLockup" value ="0x14"/>
+  </enum>
+
+  <enum name ="NoteAcceptorStatusFlagA" type ="System.Byte">
+    <value name ="Reserved" value ="0x00"/>
+    <value name ="StackerFulFlag" value ="0x80"/>
+  </enum>
+
+  <enum name ="GlobalFlagStatus" type ="System.Byte" flags="true">
+    <value name="None" value="0x00"/>
+    <value name ="Default" value="0xC0"/>
+    <value name ="ClockDisplayFlag" value ="0x40"/>
+    <value name ="SiteEnableFlag" value ="0x80"/>
+  </enum>
+
+  <enum name="ProgressiveType" type="System.Byte">
+    <value name="StandAloneProgressive" value="0x00"/>
+    <value name="LinkedProgressive" value="0x01"/>
+  </enum>
+
+  <enum name ="ProgressiveLevel" type ="System.Byte" flags="true">    
+    <value name ="Level0" value ="0x00"/>
+    <value name ="Level1" value ="0x01"/>
+    <value name ="Level2" value ="0x02"/>
+    <value name ="Level3" value ="0x03"/>
+    <value name ="Level4" value ="0x04"/>
+    <value name ="Level5" value ="0x05"/>
+    <value name ="Level6" value ="0x06"/>
+    <value name ="Level7" value ="0x07"/>
+    <value name ="Reserved" value="0xF8"/>
+  </enum>
+
+  <enum name ="GeneralPromotionalFlag" type ="System.Byte">
+    <value name ="Reserved" value ="0x00"/>
+    <value name ="FanfareFlag" value ="0x80"/>
+  </enum>
+
+  <enum name ="ProgressiveLevelFlag" type ="System.Byte" flags ="true">    
+    <value name ="ProgressiveLevel0" value ="0x00"/>
+    <value name ="ProgressiveLevel1" value ="0x01"/>
+    <value name ="ProgressiveLevel2" value ="0x02"/>
+    <value name ="ProgressiveLevel3" value ="0x03"/>
+    <value name ="ProgressiveLevel4" value ="0x04"/>
+    <value name ="ProgressiveLevel5" value ="0x05"/>
+    <value name ="ProgressiveLevel6" value ="0x06"/>
+    <value name ="ProgressiveLevel7" value ="0x07"/>    
+    <value name ="LevelType" value ="0x80"/>
+  </enum>
+
+  <!--<enum name ="ProgressiveConfigurationFlag" type ="System.Byte" flags ="true">
+    <value name ="None" value ="0x00"/>
+    <value name ="ProgressiveLevel1" value ="0x01"/>
+    <value name ="ProgressiveLevel2" value ="0x02"/>
+    <value name ="ProgressiveLevel3" value ="0x04"/>
+    <value name ="ProgressiveLevel4" value ="0x08"/>
+    <value name ="CustomSapCapability" value ="0x80"/>
+  </enum>-->
+
+  <enum name ="EgmGameConfigurationFlag" type ="System.Byte" flags="true">
+    <value name ="LinkedProgressiveFlag" value ="0x10"/>
+    <value name ="VariationLock" value ="0x20"/>
+    <value name ="VariationHotSwitchingCapabilityFlag" value ="0x40"/>
+    <value name ="GameEnableFlag" value ="0x80"/>
+  </enum>
+
+  <enum name ="NetworkProtocolVersionCharacteristics" type ="System.Byte">
+    <value name ="OldQPvEgm" value ="0x00"/>
+    <value name ="NewQPvEgm" value ="0x01"/>
+    <value name ="ProtocolVersionMask" value ="0x11"/>
+  </enum>
+
+  <enum name ="EgmConfigurationFlagA" type ="System.Byte" flags ="true">
+    <value name ="None" value ="0x00"/>
+    <value name ="MechanicalMetersExpected" value ="0x01"/>
+    <value name ="EgmNvRtvDetected" value ="0x02"/>
+    <value name ="ProgressiveDisplayExpected" value ="0x04"/>
+    <value name ="TouchScreenExpected" value ="0x08"/>
+    <value name ="CashTicketPrinterEexpected" value ="0x10"/>
+    <value name ="CoinTokenValidatorExpected" value ="0x20"/>
+    <value name ="HopperExpected" value ="0x40"/>
+    <value name ="NoteAcceptoExpected" value ="0x80"/>
+  </enum>
+
+
+  <enum name="SourceIds" type ="System.UInt16" flags="true">
+    <value name ="QComLpPrizes" value="0x00"/>
+    <value name="CashlessGaming" value="0x01"/>
+    <value name="ExternalJackpotA" value="0x02"/>
+    <value name="ExternalJackpotB" value="0x04"/>
+    <value name="ExternalJackpotC" value="0x08"/>
+  </enum>
+
+  <enum name ="EctToEgmPollFlag" type ="System.Byte" flags="true">    
+    <value name ="None" value="0x00"/>
+  </enum>
+
+  <enum name ="ProgramHashCharacteristics" type ="System.Byte" flags="true">
+    <value name="None" value="0x00" />
+    <value name ="Seed" value="0x40"/>
+    <value name ="MachineEnableFlag" value ="0x80"/>
+  </enum>
+
+
+  <enum name ="EgmConfigurationFlagB" type ="System.Byte">
+    <value name ="Reserved" value ="0x00"/>
+    <value name ="AuxiliaryDisplayDeviceExpected" value ="0x40"/>
+    <value name ="TicketInDeviceExpected" value ="0x80"/>
+  </enum>
+
+  <enum name ="EgmConfigurationFlagS" type ="System.Byte" flags="true">
+    <value name ="Reserved" value ="0x00"/>
+    <value name ="SharedProgressiveComponentFlag" value ="0x40"/>
+    <value name ="DenominationHotSwitching" value ="0x80"/>
+  </enum>
+
+  <enum name ="EctFromEgmStatus" type ="System.Byte">
+    <value name ="TransferSuccessful" value ="0x01"/>
+    <value name ="TransferDenied" value ="0x00"/>
+  </enum>
+
+  <enum name ="FCodes" type="System.Byte">
+    <value name ="TicketAccepted" value="0x00"/>
+    <value name="TicketSystemUnavailable" value="0x01"/>
+    <value name="TicketExpired" value="0x02"/>
+    <value name ="TicketAmountTooLarge" value="0x03"/>
+    <value name ="TicketInvalid" value="0x04"/>
+    <value name ="TicketNotFound" value="0x05"/>
+    <value name ="TicketAlreadyRedeemed" value="0x06"/>
+    <value name ="Unknown" value="0x07"/>
+  </enum>
+
+  <enum name ="ProgressiveLevelInformation" type="System.Byte" flags="true">
+    <value name ="Level1" value="0x00"/>
+    <value name ="Level2" value="0x01"/>
+    <value name ="Level3" value="0x02"/>
+    <value name ="Level4" value="0x03"/>
+    <value name ="Level5" value="0x04"/>
+    <value name ="Level6" value="0x05"/>
+    <value name ="Level7" value="0x06"/>
+    <value name ="Level8" value="0x07"/>
+  </enum>
+
+  <type name ="EctToEgmPollFlags">
+    <field name="EctToEgmPollFlagCharactersitics" type="System.Byte" default="0x87">
+      <bitfield name ="EctSourceId" type="SourceIds" shift="0" width="3"/>
+      <bitfield name ="Reserved" shift ="3" width="3"/>
+      <bitfield name ="CashlessMode" shift="7" width="1"/>
+    </field>
+  </type>
+
+  <type name ="LightFlashFlagType">
+    <field name ="Flag1" type ="System.Byte" default="0x00">
+      <bitfield name="YellowLightFlag1" shift="0" width="1"/>
+      <bitfield name="BlueLightFlag1" shift="1" width="1"/>
+      <bitfield name="RedLightFlag1" shift="2" width="1"/>
+      <bitfield name="ReservedFlag1" shift="3" width="5"/>
+    </field>
+    <field name ="Flag2" type ="System.Byte" default="0x00">
+      <bitfield name="YellowLightFlag2" shift="0" width="1"/>
+      <bitfield name="BlueLightFlag2" shift="1" width="1"/>
+      <bitfield name="RedLightFlag2" shift="2" width="1"/>
+      <bitfield name="ReservedFlag2" shift="3" width="5"/>
+    </field>
+  </type>
+
+  <type name="QComRawDateTime">
+    <field name ="Seconds" type="System.Int32" length="1" encoding="BCD"/>
+    <field name="Minutes" type="System.Int32" encoding="BCD" length="1"/>
+    <field name="Hours" type="System.Int32" encoding="BCD" length="1"/>
+    <field name="Day" type="System.Int32" encoding="BCD" length="1"/>
+    <field name="Month" type="System.Int32" encoding="BCD" length="1"/>
+    <field name="Year" type="System.Int32" encoding="BCD" length="1"/>
+  </type>
+
+  <type name="GameDetails">
+    <field name ="GameVersionNumber" type ="System.UInt16" length ="2"/>
+    <field name ="ProgressiveGroupId" type ="System.UInt16" length ="2"/>
+    <field name ="ProgressiveAmount" type ="System.UInt32" length ="4"/>
+  </type>
+
+  <type name ="Event">
+    <field name ="EventSequenceNumber" type ="System.Byte"/>
+    <escape onRead="ValidateEventCode"/>
+    <field name ="EventCode" type ="EventCodes"/>
+    <field name ="EventSize" type ="System.Byte"/>
+    <field name="EventDateTime" type="QComRawDateTime"/>
+    <subtype name ="CoinFaultEvents">
+      <subtype name ="CoinInFault">
+        <discriminant name="EventCode" value="EventCodes.CoinInFault"/>
+      </subtype>
+      <subtype name ="CoinInYoYo">
+        <discriminant name="EventCode" value="EventCodes.CoinInYoYo"/>
+      </subtype>
+      <subtype name ="ExcessiveCoinRejectsFault">
+        <discriminant name="EventCode" value="EventCodes.ExcessiveCoinRejectsFault"/>
+      </subtype>
+    </subtype>
+    <subtype name ="HopperFaultEvents">
+      <subtype name ="HopperLevelMismatch">
+        <discriminant name="EventCode" value="EventCodes.HopperLevelMismatch"/>
+        <subtype name="HopperLevelMismatchExtendedData">
+          <condition test ="result.EventSize &gt; 0"/>
+          <field name ="Amount" type ="System.Decimal" encoding ="BinaryLE" length ="4"/>
+        </subtype>
+      </subtype>
+      <subtype name ="HopperEmpty">
+        <discriminant name="EventCode" value="EventCodes.HopperEmpty"/>
+      </subtype>
+      <subtype name ="HopperJammed">
+        <discriminant name="EventCode" value="EventCodes.HopperJammed"/>
+      </subtype>
+      <subtype name ="HopperRunaway">
+        <discriminant name="EventCode" value="EventCodes.HopperRunaway"/>
+      </subtype>
+      <subtype name ="HopperDisconnected">
+        <discriminant name="EventCode" value="EventCodes.HopperDisconnected"/>
+      </subtype>
+      <subtype name ="HopperRefillRecordedEvent">
+        <discriminant name="EventCode" value="EventCodes.HopperRefillRecorded"/>
+        <subtype name="HopperRefillRecorded">
+          <condition test ="result.EventSize &gt; 0"/>
+          <field name ="RefillAmount" type ="System.Decimal" encoding ="BinaryLE" length ="4"/>
+        </subtype>
+      </subtype>
+      <subtype name ="HopperCalibratedEvent">
+        <discriminant name="EventCode" value="EventCodes.HopperCalibrated"/>
+        <subtype name="HopperCalibrated">
+          <condition test ="result.EventSize &gt; 0"/>
+        <field name ="Amount" type ="System.Decimal" encoding ="BinaryLE" length ="4"/>
+        </subtype>
+      </subtype>
+      <subtype name ="HopperOverpayAmountEvent">
+        <discriminant name="EventCode" value="EventCodes.HopperOverpayAmount"/>
+        <subtype name="HopperOverpayAmount">
+          <condition test ="result.EventSize &gt; 0"/>
+        <field name ="Amount " type ="System.Decimal" encoding ="BinaryLE" length ="4"/>
+        </subtype>
+      </subtype>
+      <subtype name ="HopperPayoutEvent">
+        <discriminant name="EventCode" value="EventCodes.HopperPayout"/>
+        <subtype name="HopperPayout">
+          <condition test ="result.EventSize &gt; 0"/>
+        <field name ="Amount " type ="System.Decimal" encoding ="BinaryLE" length ="4"/>
+        </subtype>
+      </subtype>
+    </subtype>
+    <subtype name="NoteAcceptorFaultEvents">
+      <subtype name ="NoteStackerFullFault">
+        <discriminant name="EventCode" value="EventCodes.NoteStackerFullFault"/>
+      </subtype>
+      <subtype name ="NoteStackerHighLevelWarning">
+        <discriminant name="EventCode" value="EventCodes.NoteStackerHighLevelWarning"/>
+      </subtype>
+      <subtype name ="NoteStackerFull">
+        <discriminant name="EventCode" value="EventCodes.NoteStackerFull"/>
+      </subtype>
+      <subtype name ="NoteAcceptorFault">
+        <discriminant name="EventCode" value="EventCodes.NoteAcceptorFault"/>
+      </subtype>
+      <subtype name ="NoteStackerCleared">
+        <discriminant name="EventCode" value="EventCodes.NoteStackerCleared"/>
+      </subtype>
+      <subtype name ="NoteAcceptorYoYo">
+        <discriminant name="EventCode" value="EventCodes.NoteAcceptorYoYo"/>
+      </subtype>
+      <subtype name ="NoteAcceptorJammed">
+        <discriminant name="EventCode" value="EventCodes.NoteAcceptorJammed"/>
+      </subtype>
+      <subtype name ="NoteAcceptorDisconnected">
+        <discriminant name="EventCode" value="EventCodes.NoteAcceptorDisconnected"/>
+      </subtype>
+      <subtype name ="EgmNoteAcceptorStackerRemoved">
+        <discriminant name="EventCode" value="EventCodes.EgmNoteAcceptorStackerRemoved"/>
+      </subtype>
+      <subtype name ="EgmNoteAcceptorStackerReturned">
+        <discriminant name="EventCode" value="EventCodes.EgmNoteAcceptorStackerReturned"/>
+      </subtype>
+      <subtype name ="CashBoxOpticDiverterFault">
+        <discriminant name="EventCode" value="EventCodes.CashBoxOpticDiverterFault"/>
+      </subtype>
+      <subtype name ="ExcessiveNoteTicketAcceptorRejectsFault">
+        <discriminant name="EventCode" value="EventCodes.ExcessiveNoteTicketAcceptorRejectsFault"/>
+      </subtype>
+    </subtype>
+    <subtype name ="CabinetFaultEvents">
+      <subtype name ="MechanicalMetersDisconnected">
+        <discriminant name="EventCode" value="EventCodes.MechanicalMetersDisconnected"/>
+      </subtype>
+      <subtype name ="ProgressiveControllerFault">
+        <discriminant name="EventCode" value="EventCodes.ProgressiveControllerFault"/>
+      </subtype>
+      <subtype name ="IOControllerFault">
+        <discriminant name="EventCode" value="EventCodes.IOControllerFault"/>
+      </subtype>
+      <subtype name ="TouchScreenFault">
+        <discriminant name="EventCode" value="EventCodes.TouchScreenFault"/>
+      </subtype>
+      <subtype name ="ManufacturerSpecificFaultA">
+        <discriminant name="EventCode" value="EventCodes.ManufacturerSpecificFaultA"/>
+      </subtype>
+      <subtype name ="ManufacturerSpecificFaultB">
+        <discriminant name="EventCode" value="EventCodes.ManufacturerSpecificFaultB"/>
+      </subtype>
+      <subtype name ="ManufacturerSpecificFaultEvent">
+        <discriminant name="EventCode" value="EventCodes.ManufacturerSpecificEvent"/>
+        <subtype name="ManufacturerSpecificEvent">
+          <condition test ="result.EventSize &gt; 0"/>
+          <field name ="RText" type="System.String" encoding="ASCII" length="16"/>
+        </subtype>
+      </subtype>
+      <subtype name ="StepperReelFault">
+        <discriminant name="EventCode" value="EventCodes.StepperReelFault"/>
+      </subtype>
+      <subtype name ="SystemLockupUserResponseEvent">
+        <discriminant name="EventCode" value="EventCodes.SystemLockupUserResponse"/>
+        <subtype name="SystemLockupUserResponse">
+          <condition test ="result.EventSize &gt; 0"/>
+          <field name ="YesNo" type ="System.Byte"/>
+        </subtype>
+      </subtype>
+      <subtype name ="CRanEHitEvent">
+        <discriminant name="EventCode" value="EventCodes.CRanEHit"/>
+        <subtype name="CRanEHit">
+          <condition test ="result.EventSize &gt; 0"/>
+          <field name="Level" type="System.Byte"/>
+          <field name ="Rate" type ="System.UInt32" length ="4"/>
+        </subtype>
+      </subtype>
+      <subtype name ="NewGameSelectedEvent">
+        <discriminant name="EventCode" value="EventCodes.NewGameSelected"/>
+        <subtype name="NewGameSelected">
+          <condition test ="result.EventSize &gt; 0"/>
+          <field name ="GameVersionNumber" type ="System.UInt16" length ="2"/>
+          <field name ="GameVariationNumber" type ="System.Byte" encoding="BCD" length="1"/>
+        </subtype>
+      </subtype>
+      <subtype name ="SecondaryEventQueueFull">
+        <discriminant name="EventCode" value="EventCodes.SecondaryEventQueueFull"/>
+      </subtype>
+      <subtype name ="NonProductionLicenseKeyDetectedEvent">
+        <discriminant name="EventCode" value="EventCodes.NonProductionLicenseKeyDetected"/>
+        <subtype name="NonProductionLicenseKeyDetected">
+          <condition test ="result.EventSize &gt; 0"/>
+          <field name ="KeyId " type ="System.Decimal" encoding ="BinaryLE" length ="8"/>
+        </subtype>
+      </subtype>
+      <subtype name ="LicenseKeyDetectedEvent">
+        <discriminant name="EventCode" value="EventCodes.LicenseKeyDetected"/>
+        <subtype name="LicenseKeyDetected">
+          <condition test ="result.EventSize &gt; 0"/>
+          <field name ="KeyId " type ="System.Decimal" encoding ="BinaryLE" length ="8"/>
+        </subtype>
+      </subtype>
+      <subtype name ="EGMTransactionDeniedCreditLimitReached">
+        <discriminant name="EventCode" value="EventCodes.EGMTransactionDeniedCreditLimitReached"/>
+      </subtype>
+      <subtype name ="EXTJIPIconDisplayEnabledEvent">
+        <discriminant name="EventCode" value="EventCodes.EXTJIPIconDisplayEnabled"/>
+        <subtype name="EXTJIPIconDisplayEnabled">
+          <condition test ="result.EventSize &gt; 0"/>
+          <field name ="IconDescription" type="System.String" encoding="ASCII" length="16"/>
+        </subtype>
+      </subtype>
+      <subtype name ="PeriodMetersReset">
+        <discriminant name="EventCode" value="EventCodes.PeriodMetersReset"/>
+      </subtype>
+      <subtype name ="InvalidTicketAcknowledgement">
+        <discriminant name="EventCode" value="EventCodes.InvalidTicketAcknowledgement"/>
+      </subtype>
+      <subtype name ="TopNpPrizeHitEvent">
+        <discriminant name="EventCode" value="EventCodes.TopNpPrizeHit"/>
+        <subtype name="TopNpPrizeHit">
+          <condition test ="result.EventSize &gt; 0"/>
+          <field name ="GameVersionNumber " type ="System.UInt16" length ="2"/>
+          <field name ="GameVariationNumber " type ="System.Byte" encoding="BCD" length="1"/>
+        </subtype>
+      </subtype>
+      <subtype name ="InvalidEGMConfiguration">
+        <discriminant name="EventCode" value="EventCodes.InvalidEGMConfiguration"/>
+      </subtype>
+      <subtype name ="InvalidGameConfiguration">
+        <discriminant name="EventCode" value="EventCodes.InvalidGameConfiguration"/>
+      </subtype>
+      <subtype name ="InvalidProgressiveConfigurationEvent">
+        <discriminant name="EventCode" value="EventCodes.InvalidProgressiveConfiguration"/>
+        <subtype name="InvalidProgressiveConfiguration">
+          <condition test ="result.EventSize &gt; 0"/>
+          <field name ="GameVersionNumber" type ="System.UInt16" length ="2"/>
+          <field name ="GameVariationNumber" type ="System.Byte" encoding="BCD" length="1"/>
+        </subtype>
+      </subtype>
+      <subtype name ="ProcessorOverTemperature">
+        <discriminant name="EventCode" value="EventCodes.ProcessorOverTemperature"/>
+      </subtype>
+      <subtype name ="CoolingFanLowRPM">
+        <discriminant name="EventCode" value="EventCodes.CoolingFanLowRPM"/>
+      </subtype>
+      <subtype name ="CallServiceTechnician">
+        <discriminant name="EventCode" value="EventCodes.CallServiceTechnician"/>
+      </subtype>
+      <subtype name ="RecoverableRAMCorruption">
+        <discriminant name="EventCode" value="EventCodes.RecoverableRAMCorruption"/>
+      </subtype>
+      <subtype name ="NewPIDSessionStarted">
+        <discriminant name="EventCode" value="EventCodes.NewPIDSessionStarted"/>
+      </subtype>
+      <subtype name ="DenominationChangedEvent">
+        <discriminant name="EventCode" value="EventCodes.DenominationChanged"/>
+        <subtype name="DenominationChanged">
+          <condition test ="result.EventSize &gt; 0"/>
+          <field name ="GameDenomination" type ="System.Decimal" encoding ="BinaryLE" length ="4" precision="2"/>
+        </subtype>
+      </subtype>
+      <subtype name ="InvalidDenomination">
+        <discriminant name="EventCode" value="EventCodes.InvalidDenomination"/>
+      </subtype>
+      <subtype name ="ProgressiveConfigurationChangedEvent">
+        <discriminant name="EventCode" value="EventCodes.ProgressiveConfigurationChanged"/>
+        <subtype name="ProgressiveConfigurationChanged">
+          <condition test ="result.EventSize &gt; 0"/>
+          <field name ="GameVersionNumber" type ="System.UInt16" length ="2"/>
+          <field name ="GameVariationNumber " type ="System.Byte" encoding="BCD" length="1"/>
+          <field name ="ProgressiveRtp" type ="System.Int32" length ="4"/>
+        </subtype>
+      </subtype>
+      <subtype name ="CashBoxCleared">
+        <discriminant name="EventCode" value="EventCodes.CashBoxCleared"/>
+      </subtype>
+      <subtype name ="QsimProtocolSimulator">
+        <discriminant name="EventCode" value="EventCodes.QsimProtocolSimulator"/>
+      </subtype>
+      <subtype name ="PowerOffProcessorDoorAccess">
+        <discriminant name="EventCode" value="EventCodes.PowerOffProcessorDoorAccess"/>
+      </subtype>
+      <subtype name ="PowerOffCashDoorAccess">
+        <discriminant name="EventCode" value="EventCodes.PowerOffCashDoorAccess"/>
+      </subtype>
+      <subtype name ="PowerOffMainDoorAccess">
+        <discriminant name="EventCode" value="EventCodes.PowerOffMainDoorAccess"/>
+      </subtype>
+      <subtype name ="PowerOffNoteAcceptorDoorAccess">
+        <discriminant name="EventCode" value="EventCodes.PowerOffNoteAcceptorDoorAccess"/>
+      </subtype>
+      <subtype name ="PowerOffMechanicalMeterDoorAccess">
+        <discriminant name="EventCode" value="EventCodes.PowerOffMechanicalMeterDoorAccess"/>
+      </subtype>
+      <subtype name ="PrimaryEventQueueFull">
+        <discriminant name="EventCode" value="EventCodes.PrimaryEventQueueFull"/>
+      </subtype>
+      <subtype name ="CommunicationsTimeOut">
+        <discriminant name="EventCode" value="EventCodes.CommunicationsTimeOut"/>
+      </subtype>
+      <subtype name ="GameVariationEnabledEvent">
+        <discriminant name="EventCode" value="EventCodes.GameVariationEnabled"/>
+        <subtype name="GameVariationEnabled">
+          <condition test ="result.EventSize &gt; 0"/>
+          <field name ="GameVersionNumber" type ="System.UInt16" length ="2"/>
+          <field name ="GameVariationNumber " type ="System.Byte" encoding="BCD" length="1"/>
+        </subtype>
+      </subtype>
+      <subtype name ="RtcRefreshed">
+        <discriminant name="EventCode" value="EventCodes.RtcRefreshed"/>
+      </subtype>
+      <subtype name ="EgmPowerUp">
+        <discriminant name="EventCode" value="EventCodes.EgmPowerUp"/>
+      </subtype>
+      <subtype name ="EgmPowerDown">
+        <discriminant name="EventCode" value="EventCodes.EgmPowerDown"/>
+      </subtype>
+      <subtype name ="LowMemory">
+        <discriminant name="EventCode" value="EventCodes.LowMemory"/>
+      </subtype>
+      <subtype name ="PowerDownIncomplete">
+        <discriminant name="EventCode" value="EventCodes.PowerDownIncomplete"/>
+      </subtype>
+      <subtype name ="AuxiliaryDisplayDeviceFailure">
+        <discriminant name="EventCode" value="EventCodes.AuxiliaryDisplayDeviceFailure"/>
+      </subtype>
+      <subtype name ="PrimaryDisplayDeviceFailure">
+        <discriminant name="EventCode" value="EventCodes.PrimaryDisplayDeviceFailure"/>
+      </subtype>
+      <subtype name ="TertiaryDisplayDeviceFailure">
+        <discriminant name="EventCode" value="EventCodes.TertiaryDisplayDeviceFailure"/>
+      </subtype>
+      <subtype name ="LicenseKeyMissingEvent">
+        <discriminant name="EventCode" value="EventCodes.LicenseKeyMissing"/>
+        <subtype name="LicenseKeyMissing">
+          <condition test ="result.EventSize &gt; 0"/>
+          <field name ="KeyId" type ="System.Decimal" encoding ="BinaryLE" length ="8"/>
+        </subtype>
+      </subtype>
+      <subtype name ="BonusDeviceFault">
+        <discriminant name="EventCode" value="EventCodes.BonusDeviceFault"/>
+      </subtype>
+      <subtype name ="LowNVRAMBattery">
+        <discriminant name="EventCode" value="EventCodes.LowNVRAMBattery"/>
+      </subtype>
+      <subtype name ="LowPFDoorDetectionBattery">
+        <discriminant name="EventCode" value="EventCodes.LowPFDoorDetectionBattery"/>
+      </subtype>
+      <subtype name ="EEPROMFault">
+        <discriminant name="EventCode" value="EventCodes.EEPROMFault"/>
+      </subtype>
+      <subtype name ="NVRAMClearedEvent">
+        <discriminant name="EventCode" value="EventCodes.NVRAMCleared"/>
+        <subtype name="NVRAMCleared">
+          <condition test ="result.EventSize &gt; 0"/>
+          <field name ="EgmSerialNumber" type ="System.Decimal" encoding ="BCDWithLSBFirst" length ="3"/>
+          <field name ="EgmManufacturerId" type ="System.Byte" encoding="BCD" length="1"/>
+        </subtype>
+      </subtype>
+    </subtype>
+    <subtype name="PrinterFaultEvents">
+      <subtype name ="EGMTicketInTimeOutEvent">
+        <discriminant name="EventCode" value="EventCodes.EGMTicketInTimeOut"/>
+        <subtype name="EGMTicketInTimeOut">
+          <condition test ="result.EventSize &gt; 0"/>
+          <field name ="TicketAuthorisationNumber" type ="System.Decimal" encoding ="BinaryLE" length ="16"/>
+        </subtype>
+      </subtype>
+      <subtype name ="EGMTicketInAbortedEvent">
+        <discriminant name="EventCode" value="EventCodes.EGMTicketInAborted"/>
+        <subtype name="EGMTicketInAborted">
+          <condition test ="result.EventSize &gt; 0"/>
+          <field name ="TicketAuthorisationNumber" type ="System.Decimal" encoding ="BinaryLE" length ="16"/>
+        </subtype>
+      </subtype>
+      <subtype name ="TicketPrinterPaperOut">
+        <discriminant name="EventCode" value="EventCodes.TicketPrinterPaperOut"/>
+      </subtype>
+      <subtype name ="TicketPrinterPaperJam">
+        <discriminant name="EventCode" value="EventCodes.TicketPrinterPaperJam"/>
+      </subtype>
+      <subtype name ="TicketPrinterGeneralFault">
+        <discriminant name="EventCode" value="EventCodes.TicketPrinterGeneralFault"/>
+      </subtype>
+      <subtype name ="TicketPrinterInkLow">
+        <discriminant name="EventCode" value="EventCodes.TicketPrinterInkLow"/>
+      </subtype>
+      <subtype name ="TicketPrinterpaperLow">
+        <discriminant name="EventCode" value="EventCodes.TicketPrinterpaperLow"/>
+      </subtype>
+    </subtype>
+    <subtype name ="LinkedProgressiveAwardEvent">
+      <discriminant name="EventCode" value="EventCodes.LinkedProgressiveAward"/>
+      <subtype name="LinkedProgressiveAward">
+        <condition test ="result.EventSize &gt; 0"/>
+        <field name ="GameVersionNumber" type ="System.UInt16" length ="2"/>
+        <field name ="GameVariationNumber" type ="System.Byte" encoding="BCD" length="1"/>
+        <field name ="ProgressiveGroupId" type ="System.UInt16" length ="2"/>
+        <field name ="LinkedProgressiveLevel" type ="ProgressiveLevel"/>
+        <field name ="LastJackpotAmount" type ="System.UInt32" length ="4"/>
+      </subtype>
+    </subtype>
+    <subtype name ="LargeWinEvent">
+      <discriminant name="EventCode" value="EventCodes.LargeWin"/>
+      <subtype name="LargeWin">
+        <condition test ="result.EventSize &gt; 0"/>
+        <field name ="GameVersionNumber" type ="System.UInt16" length ="2"/>
+        <field name ="GameVariationNumber" type ="System.Byte" encoding="BCD" length="1"/>
+        <field name ="WinAmount" type ="System.Int32" length ="4"/>
+      </subtype>
+    </subtype>
+    <subtype name ="CancelCreditEvent">
+      <discriminant name="EventCode" value="EventCodes.CancelCredit"/>
+      <subtype name="CancelCredit">
+        <condition test ="result.EventSize &gt; 0"/>
+        <field name ="CancelCreditAmount" type ="System.Int32" length ="4"/>
+      </subtype>
+    </subtype>
+    <subtype name ="AllFaultsCleared">
+      <discriminant name="EventCode" value="EventCodes.AllFaultsCleared"/>
+    </subtype>
+    <subtype name ="LockUpCleared">
+      <discriminant name="EventCode" value="EventCodes.LockUpCleared"/>
+    </subtype>
+    <subtype name ="CancelCreditCancelled">
+      <discriminant name="EventCode" value="EventCodes.CancelCreditCancelled"/>
+    </subtype>
+    <subtype name="DoorOpenEvents">
+      <subtype name ="EgmMainDoorOpened">
+        <discriminant name="EventCode" value="EventCodes.EgmMainDoorOpened"/>
+      </subtype>
+      <subtype name ="EgmCashBoxDoorOpened">
+        <discriminant name="EventCode" value="EventCodes.EgmCashBoxDoorOpened"/>
+      </subtype>
+      <subtype name ="EgmProcessorDoorOpened">
+        <discriminant name="EventCode" value="EventCodes.EgmProcessorDoorOpened"/>
+      </subtype>
+      <subtype name ="EgmBellyPanelDoorOpened">
+        <discriminant name="EventCode" value="EventCodes.EgmBellyPanelDoorOpened"/>
+      </subtype>
+      <subtype name ="EgmNoteAcceptorDoorOpened">
+        <discriminant name="EventCode" value="EventCodes.EgmNoteAcceptorDoorOpened"/>
+      </subtype>
+      <subtype name ="EgmMechanicalMeterDoorOpened">
+        <discriminant name="EventCode" value="EventCodes.EgmMechanicalMeterDoorOpened"/>
+      </subtype>
+      <subtype name ="EgmTopBoxDoorOpened">
+        <discriminant name="EventCode" value="EventCodes.EgmTopBoxDoorOpened"/>
+      </subtype>
+    </subtype>
+    <subtype name="DoorCloseEvents">
+      <subtype name ="EgmMainDoorClosed">
+        <discriminant name="EventCode" value="EventCodes.EgmMainDoorClosed"/>
+      </subtype>
+      <subtype name ="EgmCashBoxDoorClosed">
+        <discriminant name="EventCode" value="EventCodes.EgmCashBoxDoorClosed"/>
+      </subtype>
+      <subtype name ="EgmProcessorDoorClosed">
+        <discriminant name="EventCode" value="EventCodes.EgmProcessorDoorClosed"/>
+      </subtype>
+      <subtype name ="EgmBellyPanelDoorClosed">
+        <discriminant name="EventCode" value="EventCodes.EgmBellyPanelDoorClosed"/>
+      </subtype>
+      <subtype name ="EgmNoteAcceptorDoorClosed">
+        <discriminant name="EventCode" value="EventCodes.EgmNoteAcceptorDoorClosed"/>
+      </subtype>
+      <subtype name ="EgmMechanicalMeterDoorClosed">
+        <discriminant name="EventCode" value="EventCodes.EgmMechanicalMeterDoorClosed"/>
+      </subtype>
+      <subtype name ="EgmTopBoxDoorClosed">
+        <discriminant name="EventCode" value="EventCodes.EgmTopBoxDoorClosed"/>
+      </subtype>
+    </subtype>
+    <subtype name ="CashTicketPrintedEvent">
+      <discriminant name="EventCode" value="EventCodes.CashTicketPrinted"/>
+      <subtype name="CashTicketPrinted">
+        <condition test ="result.EventSize &gt; 0"/>
+        <field name ="TicketSerialNumber" type ="System.Int32" length ="4"/>
+        <field name ="TicketAuthenticationCode" type ="System.Int32" length ="4"/>
+        <field name ="Amount" type ="System.Decimal" encoding ="BinaryLE" length ="4"/>
+      </subtype>
+    </subtype>
+
+    <subtype name ="OldResidualCancelCreditLockUpEvent">
+      <discriminant name="EventCode" value="EventCodes.OldResidualCancelCreditLockUp"/>
+      <subtype name="OldResidualCancelCreditLockUp">
+        <condition test ="result.EventSize &gt; 0"/>
+        <field name ="CancelCreditAmount " type ="System.Decimal" encoding ="BinaryLE" length ="2"/>
+      </subtype>
+    </subtype>
+
+    <subtype name ="ECTfromEGMOldEvent">
+      <discriminant name="EventCode" value="EventCodes.ECTfromEGMOld"/>
+      <subtype name="ECTfromEGMOld">
+        <condition test ="result.EventSize &gt; 0"/>
+      <field name ="Amount" type ="System.Decimal" encoding ="BCDWithLSBFirst" length ="4"/>
+      </subtype>
+    </subtype>
+
+    <subtype name ="StandAloneProgressiveAwardEventV16">
+      <discriminant name="EventCode" value="EventCodes.StandAloneProgressiveAwardV16"/>
+      <subtype name="StandAloneProgressiveAwardV16">
+        <condition test ="result.EventSize &gt; 0"/>
+        <field name ="GameVersionNumber" type ="System.UInt16" length ="2"/>
+        <field name ="GameVariationNumber" type ="System.Byte" encoding="BCD" length="1"/>
+        <field name ="ProgressiveLevelInfo" type ="ProgressiveLevelInformation"/>
+        <field name ="JackpotAmount " type ="System.Decimal" encoding ="BinaryLE" length ="4"/>
+      </subtype>
+    </subtype>
+
+    <subtype name ="StandAloneProgressiveAwardEventV15">
+      <discriminant name="EventCode" value="EventCodes.StandAloneProgressiveAwardV15"/>
+      <subtype name="StandAloneProgressiveAwardV15">
+        <condition test ="result.EventSize &gt; 0"/>
+        <field name ="GameVersionNumber" type ="System.UInt16" length ="2"/>
+        <field name ="GameVariationNumber" type ="System.Byte" encoding="BCD" length="1"/>
+        <field name ="ProgressiveLevelInfo" type ="ProgressiveLevelInformation"/>
+        <field name ="JackpotAmount " type ="System.Decimal" encoding ="BinaryLE" length ="4"/>
+      </subtype>
+    </subtype>
+  
+
+    <subtype name ="ECTFromEGMNewEvent">
+      <discriminant name="EventCode" value="EventCodes.ECTFromEGMNew"/>
+      <subtype name="ECTFromEGMNew">
+        <condition test ="result.EventSize &gt; 0"/>
+        <field name ="Amount" type ="System.Decimal" encoding ="BinaryLE" length ="4"/>
+      </subtype>
+    </subtype>
+    <subtype name ="ResidualCancelCreditLockUpEvent">
+      <discriminant name="EventCode" value="EventCodes.ResidualCancelCreditLockUp"/>
+      <subtype name="ResidualCancelCreditLockUp">
+        <condition test ="result.EventSize &gt; 0"/>
+        <field name ="CancelCreditAmount " type ="System.Decimal" encoding ="BinaryLE" length ="4"/>
+      </subtype>
+    </subtype>
+    <subtype name ="CashTicketOutRequestEvent">
+      <discriminant name="EventCode" value="EventCodes.CashTicketOutRequest"/>
+      <subtype name="CashTicketOutRequest">
+        <condition test ="result.EventSize &gt; 0"/>
+        <field name ="TicketSerialNumber" type ="System.UInt16" length ="2"/>
+        <field name ="TicketAmount" type ="System.Decimal" encoding ="BinaryLE" length ="4"/>
+      </subtype>
+    </subtype>
+    <subtype name ="CashTicketOutPrintSuccessfulEvent">
+      <discriminant name="EventCode" value="EventCodes.CashTicketOutPrintSuccessful"/>
+      <subtype name="CashTicketOutPrintSuccessful">
+        <condition test ="result.EventSize &gt; 0"/>
+        <field name ="TicketSerialNumber " type ="System.UInt16" length ="2"/>
+        <field name ="TicketAmount " type ="System.Decimal" encoding ="BinaryLE" length ="4"/>
+      </subtype>
+    </subtype>
+    <subtype name ="CashTicketOutPrintFailureEvent">
+      <discriminant name="EventCode" value="EventCodes.CashTicketOutPrintFailure"/>
+      <subtype name="CashTicketOutPrintFailure">
+        <condition test ="result.EventSize &gt; 0"/>
+        <field name ="TicketSerialNumber" type ="System.UInt16" length ="2"/>
+        <field name ="TicketAmount" type ="System.UInt16" length ="2"/>
+      </subtype>
+    </subtype>
+    <subtype name ="CashTicketInRequestEvent">
+      <discriminant name="EventCode" value="EventCodes.CashTicketIn"/>
+      <subtype name="CashTicketInRequest">
+        <condition test ="result.EventSize &gt; 0"/>
+        <field name ="TicketAuthorisationNumber" type ="System.Decimal" encoding ="BinaryLE" length ="16"/>
+      </subtype>
+    </subtype>
+    <subtype name ="ReservedNewPIDSessionStartedEvent">
+      <discriminant name="EventCode" value="EventCodes.ReservedNewPIDSessionStarted"/>
+    </subtype>
+    <subtype name ="PIDSessionStoppedEvent">
+      <discriminant name="EventCode" value="EventCodes.PIDSessionStopped"/>
+    </subtype>
+    <subtype name ="UnknownEvent">
+      <condition test="result.IsUnknown"/>
+      <list name ="GenericDataBuffer" type ="System.Byte">
+        <condition test="GenericDataBuffer.Count &lt; EventSize"/>
+      </list>
+    </subtype>
+  </type>
+
+  <type name ="MeterInfo">
+    <field name ="MeterCode" type ="MeterCodes"/>
+    <field name ="RawValue" type ="System.UInt32" length ="4"/>
+  </type>
+
+
+  <type name="ProgressiveInfo">
+    <field name ="ProgressiveLevelInfo" type ="System.Byte">
+      <bitfield name="ProgressiveLevelNumber" shift="0" width="3"/>
+      <bitfield name="QComProgressiveType" shift="7" width="1"/>
+    </field>
+    <field name ="ConributionAmount" type ="System.Decimal" encoding="BinaryLE" length ="4" precision="2"/>
+  </type>
+  
+
+  <type name ="ProgressiveGroupV16">
+    <field name ="ProgressiveLevelData" type ="ProgressiveInfo"/>
+    <field name ="ProgressiveHits" type ="System.Decimal" encoding="BinaryLE" length ="2"/>
+    <field name ="ProgressiveWins" type ="System.Decimal" encoding="BinaryLE" length ="4" precision="2"/>
+    <field name ="ProgressiveHitRate" type ="System.Decimal" encoding ="BinaryLE" length="4"/>
+  </type>
+
+  <type name ="ProgressiveGroupV15">
+    <field name ="ProgressiveLevelData" type ="ProgressiveInfo"/>  
+  </type>
+
+  <type name ="ProgressiveConfigurationGroup">
+    <field name ="ProgressiveLevelFlag" type="ProgressiveLevelFlag"/>
+    <field name ="StartupAmount" type ="System.Decimal" encoding ="BinaryLE" length ="4" precision="2"/>
+    <field name ="Increment" type ="System.Decimal" encoding ="BinaryLE" length ="4"/>
+    <field name ="CeilingAmount" type ="System.Decimal" encoding ="BinaryLE" length ="4" precision="2"/>
+    <field name ="AuxPayback" type ="System.Decimal" encoding ="BinaryLE" length ="4"/>
+  </type>
+
+  <type name ="PlayerChoiceMetersCharacteristics">
+    <field name ="PlayerChoiceMeters" type ="System.UInt32" length ="4"/>
+  </type>
+
+  <type name ="CraneLevelDetails">
+    <field name="Level" type="System.Byte" default="0x00"/>
+    <field name ="Rate" type ="System.UInt32" length ="4"/>
+  </type>
+
+  <type name ="LPContributionDataBlock">
+    <field name ="ProgressiveGroupId" type ="System.UInt16" length ="2"/>
+    <field name ="Reserved" type ="System.Byte"/>
+    <field name ="ProgressiveTurnoverMeter" type ="System.UInt32" length ="4"/>
+  </type>
+
+  <type name ="GameVariation">
+    <field name ="GameVariationNumber" type ="System.Byte" encoding="BCD" length="1"/>
+    <field name ="PercentageReturn" type ="System.UInt16" length ="2"/>
+  </type>
+
+  <type name ="GameVariationV15">
+    <field name ="GameVariationNumber" type ="System.Byte" encoding="BCD" length="1"/>
+    <field name ="PercentageReturn" type ="System.UInt16" encoding="BCD" length ="2"/>
+  </type>
+
+  <type name ="LinkedProgressiveDetails">
+    <field name ="LinkedProgressiveGroupId" type ="System.UInt16" length ="2"/>
+    <field name ="LinkedProgressiveLevelId" type ="ProgressiveLevel"/>
+    <field name ="LinkedProgressiveJackpotAmount" type ="System.Decimal" encoding ="BinaryLE" length ="4"/>
+  </type>
+
+  <type name ="ProgressiveLevelData">
+    <field name ="ProgressiveFlag" type ="ProgressiveFlagCharacteristics"/>
+    <field name ="ContributionAmount" type="System.Decimal" encoding ="BinaryLE" length ="4" precision ="2"/>
+  </type>
+
+  <type name ="ProgressiveConfiguration">
+    <field name ="ProgressiveLevelId" type="System.Byte" default="0x00"/>
+    <field name="StartupAmount" type="System.Decimal" encoding="BinaryLE" length="4" precision="2"/>
+    <field name ="JackpotLevelPercent" type="System.Decimal" encoding="BinaryLE" length="4" precision="4"/>
+    <field name="CeilingAmount" type="System.Decimal" encoding="BinaryLE" length="4" precision="2"/>
+    <field name="AuxRtp" type="System.Decimal" encoding="BinaryLE" length="4" precision="4"/>
+  </type>
+
+  <type name="ExternalJackpotLevelDetail">
+    <field name ="ExternalJackpotProgressiveGroupId" type="System.UInt16" length ="2"/>
+    <field name ="LevelFlag" type="ExternalJackpotLevel"/>
+    <field name ="UnitModifier" type="ExternalJackpotUnitModifierCharacteristics"/>
+    <field name ="LevelName" type="System.String" encoding="ASCII" length="16"/>
+  </type>
+
+
+  <type name ="ApplicationMessage">
+    <escape onRead="ValidateFunctionCode"/>
+    <field name ="MessageType" type ="FunctionCodes"/>    
+    <subtype name ="Request">
+      <subtype name ="GeneralStatusPoll">
+        <assign name ="MessageType" type ="FunctionCodes" value="FunctionCodes.GeneralStatus"/>
+      </subtype>
+      <subtype name="SeekEgmBroadcastPoll">
+        <assign name="MessageType" type="FunctionCodes" value="FunctionCodes.SeekEgmBroadcastPoll"/>
+      </subtype>
+      <subtype name ="CurrentDateTimeBroadcast">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.Broadcast"/>
+        <field name ="GlobalFlag" type ="GlobalFlagStatus"/>
+        <field name ="SystemDateTime" type ="System.DateTime" encoding="QComTimeDate" length="6"/>
+        <escape onWrite="SaveLengthPosition"/>
+        <field name ="ExtendedSize" type ="System.Byte"/>
+        <subtype name ="ExtendedBroadcastData">
+          <field name ="ExtendedFunctionType" type ="ExtendedBroadcastFunctionCodes"/>
+          <subtype name ="LinkedProgressiveJackpotCurrentAmounts">
+            <assign name ="ExtendedFunctionType" type ="ExtendedBroadcastFunctionCodes" value ="ExtendedBroadcastFunctionCodes.LinkedProgressiveJackpot"/>
+            <field name ="NumberOfProgressiveLevels" type ="ProgressiveLevel"/>
+            <list name ="LinkedProgressiveData" type="LinkedProgressiveDetails">    
+              <condition test ="LinkedProgressiveData.Count &gt; 0"/>
+            </list>
+          </subtype>
+          <subtype name ="GeneralPromotionalMessage">
+            <assign name ="ExtendedFunctionType" type ="ExtendedBroadcastFunctionCodes" value ="ExtendedBroadcastFunctionCodes.GeneralPromotional"/>
+            <field name ="GeneralPromotionalFlag" type ="GeneralPromotionalFlag"/>
+            <field name="GeneralPromotionalMessageLength" type="System.Byte"/>
+            <field name="GeneralPromotionalMessageText" type="System.String" encoding="ASCII" length="GeneralPromotionalMessageLength"/>
+          </subtype>
+          <subtype name ="EgmPollAddressConfiguration">
+            <assign name ="ExtendedFunctionType" type ="ExtendedBroadcastFunctionCodes" value ="ExtendedBroadcastFunctionCodes.EgmPollAddressConfiguration"/>
+            <field name="NoOfEgms" type="System.Byte"/>
+            <field name="ExtendedDataSize" type="System.Byte"/>
+            <field name ="SerialNumber" type ="System.Decimal" encoding ="BCDWithLSBFirst" length ="3"/>
+            <field name ="ManufacturerId" type ="System.Byte" encoding="BCD" length="1"/>
+            <field name="PollAddress" type="System.Byte"/>
+          </subtype>
+          <subtype name ="SiteDetails">
+            <assign name ="ExtendedFunctionType" type ="ExtendedBroadcastFunctionCodes" value ="ExtendedBroadcastFunctionCodes.SiteDetails"/>
+            <field name ="Fmt" type="System.Byte" default="0x00"/>
+            <escape onWrite="UpdateLength"/>
+            <field name="SLength" type="System.Byte"/>
+            <field name="LLength" type="System.Byte"/>
+            <field name="SText" type="System.String" encoding="ASCII" length="SLength"/>
+            <field name="LText" type="System.String" encoding="ASCII" length="LLength"/>
+          </subtype>
+        </subtype>
+        <escape onWrite="UpdateLength"/>
+      </subtype>
+      <subtype name ="EgmConfigurationRequestPoll">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.EgmConfigurationRequest"/>
+        <field name ="StatusRequestFlag" type ="StatusRequestFlag" default="StatusRequestFlag.Reserved"/>
+      </subtype>
+      <subtype name ="EgmConfigurationV15Poll">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.EgmConfiguration"/>
+        <field name ="SerialNumber" type ="System.Decimal" encoding ="BCDWithLSBFirst" length ="3"/>
+        <field name ="ManufacturerId" type ="System.Byte" encoding="BCD" length="1"/>
+        <field name ="Jurisdiction" type ="JurisdictionCharacteristics"/>
+        <field name ="MachineFlags" type="System.Byte" default="0x00"/>
+        <field name ="OldCreditDenomination" type ="System.Decimal" encoding ="BCDWithLSBFirst" length ="2" precision="2"/>
+        <field name ="OldTokenDenomination" type ="System.Decimal" encoding ="BCDWithLSBFirst" length ="2" precision="2"/>
+        <subtype name ="EgmConfigurationPoll">
+          <field name ="CreditDenomination" type="System.Decimal" encoding="BinaryLE" length ="4" precision="2"/>
+          <field name ="TokenDenomination" type="System.Decimal" encoding="BinaryLE" length ="4" precision="2"/>
+          <field name ="MaxDenomination" type="System.Decimal" encoding="BinaryLE" length ="4" precision="2"/>
+          <field name ="Reserved" type="System.Decimal" encoding ="BinaryLE" length ="4" default="0"/>
+          <field name ="MinRTP" type="System.Decimal" encoding="BinaryLE" length ="2" precision="2"/>
+          <field name ="MaxRTP" type="System.Decimal" encoding="BinaryLE" length ="2" precision="2"/>
+          <field name ="MAXSD" type="System.Decimal" encoding="BinaryLE" length ="2"/>
+          <field name ="MaxLines" type="System.Decimal" encoding="BinaryLE" length ="2"/>
+          <field name ="MaxBet" type="System.Decimal" encoding="BinaryLE" length ="4" precision="2"/>
+          <field name ="MaxNonProgressiveWin" type="System.Decimal" encoding ="BinaryLE" length ="4" precision="2"/>
+          <field name ="MaxProgressiveWin" type="System.Decimal" encoding ="BinaryLE" length ="4" precision="2"/>
+          <field name ="MaxECT" type="System.Decimal" encoding ="BinaryLE" length ="4" precision="2"/>
+        </subtype>
+      </subtype>
+      <subtype name ="EgmGameConfigurationPoll">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.EgmGameConfiguration"/>
+        <field name ="GameVersionNumber" type="System.UInt16" length ="2"/>
+        <field name ="GameVariationNumber" type ="System.Byte" encoding="BCD" length="1"/>
+        <field name ="GameConfigurationFlag" type ="GameConfigurationFlagCharacteristics"/>
+        <field name ="LinkedProgressiveGroupId" type="System.UInt16" length ="2" default="0xFFFF"/>
+        <field name ="NoOfProgressiveLevels " type="System.Byte"/>
+        <field name ="Size " type="System.Byte" default="5"/>
+        <list name ="ProgressiveLevelsInformation" type ="ProgressiveLevelData">
+          <condition test ="ProgressiveLevelsInformation.Count &gt; 0"/>
+        </list>
+      </subtype>
+      <subtype name ="EgmGameConfigurationChangePoll">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.EgmGameConfigurationChange"/>
+        <field name ="GameVersionNumber" type="System.UInt16" length ="2"/>
+        <field name ="GameVariationNumber" type ="System.Byte" encoding="BCD" length="1"/>
+        <field name ="GameFlag" type ="GameFlagCharacteristics"/>
+        <field name ="LinkedProgressiveGroupId" type="System.UInt16" length ="2"/>
+      </subtype>
+      <subtype name ="EgmParametersV15Poll">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.EgmParameter"/>
+        <field name ="ParameterFlag" type ="ParameterFlagCharacteristics"/>
+        <field name ="OperatorId" type ="System.Byte" default="0x00"/>
+        <field name ="LargeWinLockUpThreshold" type="System.Decimal" encoding="BinaryLE" length ="4" precision="2"/>
+        <field name ="CreditInLockOut" type="System.Decimal" encoding="BinaryLE" length ="4" precision="2"/>
+        <field name ="MaxAllowableDoubleUpLimit" type="System.Byte">
+          <bitfield name="DoubleUpMaxLimit" shift ="0" width ="4"/>
+        </field>
+        <field name ="DoubleUpLimit" type="System.Decimal" encoding ="BinaryLE" length ="4" precision="2"/>
+        <subtype name="EgmParametersPoll">
+          <field name ="TimeZoneAdjustment" type="System.Decimal" encoding="BinaryLE" length ="2"/>
+          <field name ="PowerSaveTimeOut" type="System.Decimal" encoding ="BinaryLE" length ="4" default="10"/>
+          <field name ="PlayerInfoDisplayId" type="System.Byte"/>
+          <field name ="EndDayTime" type="System.Decimal" encoding="BinaryLE" length ="2"/>
+          <field name ="NpWinPayoutThreshold" type="System.Decimal" encoding="BinaryLE" length ="4" precision="2"/>
+          <field name ="SapWinPayoutThreshold" type="System.Decimal" encoding="BinaryLE" length ="4" precision="2"/>
+        </subtype>
+      </subtype>
+      <subtype name ="ProgressiveConfigurationPoll">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.ProgressiveConfiguration"/>
+        <field name ="GameVersionNumber" type="System.UInt16" length ="2"/>
+        <field name ="Reserved" type="System.UInt16" length ="2" default="0"/>
+        <field name ="Flag" type="System.Decimal" encoding ="BinaryLE" length ="4" default="0"/>
+        <field name ="NoOfReatedEntries" type="System.Byte"/>
+        <field name ="RepeatedEntrySize" type="System.Byte" default="17"/>
+        <list name ="ProgressiveConfigurations" type="ProgressiveConfiguration">
+          <condition test="ProgressiveConfigurations.Count &gt; 0"/>
+        </list>
+      </subtype>
+      <subtype name ="ExternalJackpotInformationPoll">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.ExternalJackpotInformation"/>
+        <field name ="Reserved" type="System.Int32" length ="4" default="0"/>
+        <field name ="RtpPercentage" type="System.Decimal" encoding="BinaryLE" length ="2" precision ="2"/>
+        <field name ="ExternalJackpotFlag" type="ExternalJackpotFlagCharacteristics" length ="2"/>
+        <field name ="ExternalJackpotIconDisplayFlag" type="ExternalJackpotIconDisplayFlagCharacteristics"/>
+        <field name ="ExternalJackpotSize" type="System.Byte" default="20"/>
+        <list name="ExternalJacpotLevelDetails" type="ExternalJackpotLevelDetail">
+          <condition test="ExternalJacpotLevelDetails.Count &gt; 0"/>
+        </list>
+      </subtype>
+      <subtype name ="ProgramHashRequestPollMessage">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.ProgramHash"/>
+        <field name ="Reserved" type="ProgramHashCharacteristics" default="ProgramHashCharacteristics.Seed"/>
+        <!--<field name ="Seed" type="System.Decimal" encoding="BinaryLE" length ="20"/>-->
+        <list name="Seed" type="System.Byte">
+          <condition test="Seed.Count &gt; 20"/>
+        </list>
+      </subtype>
+      <subtype name ="SystemLockupRequestPoll">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.SystemLockup"/>
+        <field name ="LockUpFlag" type ="LockUpFlagCharacteristics"/>
+        <field name="LockUpTextLength" type="System.Byte"/>
+        <field name="LockUpText" type="System.String" encoding="ASCII" length="LockUpTextLength"/>
+      </subtype>
+      <subtype name ="CashTicketOutRequestAcknowledgementPoll">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.CashTicketOutRequestAcknowledgement"/>       
+        <field name ="CashTicketOutFlag" type ="CashTicketOutFlagCharacteristics"/>
+        <field name ="Reserved" type="System.Decimal" encoding ="BinaryLE" length ="4" default="0x00"/>
+        <field name ="TicketSerialNumber" type="System.UInt16" length ="2"/>
+        <field name ="TicketOutAmount" type="System.Decimal" encoding="BinaryLE" length ="4"/>
+        <field name ="TransactionTime" type ="System.DateTime" encoding="QComTimeDate" length="6"/>
+        <field name ="TicketAuthorisationNumber" type="System.Decimal" encoding="BinaryLE" length ="16"/>
+        <field name ="ReservedData" type="System.Decimal" encoding ="BinaryLE" length ="4" default="0x00"/>
+        <field name="CashTicketOutLength" type="System.Byte"/>        
+        <field name="CashTicketOutText" type="System.String" encoding="ASCII" length="CashTicketOutLength"/>
+      </subtype>
+      <subtype name ="CashTicketInRequestAcknowledgementPoll">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.CashTicketInRequest"/>
+        <field name ="Reserved" type="System.Decimal" encoding ="BinaryLE" length ="4" default="0x00"/>
+        <field name ="FCode" type="FCodes"/>
+        <field name ="TicketInAmount" type="System.Decimal" encoding="BinaryLE" length ="4"/>
+        <field name ="TicketAuthorisationNumber" type="System.Decimal" encoding="BinaryLE" length ="16"/>
+      </subtype>
+      <subtype name ="CashOutRequestPoll">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.CashOutRequest"/>
+      </subtype>
+      <subtype name ="EgmGeneralMaintenancePoll">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.EgmGeneralMaintenance"/>
+        <field name ="MaintenanceBlock" type="MaintenanceBlockCharacteristics"/>
+        <field name ="MaintenanceFlagStatus" type ="MaintenanceFlagStatus"/>
+        <field name ="Number" type ="System.Byte" default="0x00"/>
+        <field name ="Size" type ="System.Byte" default="0x00"/>
+        <field name ="GameVersionNumber" type="System.UInt16" length ="2"/>
+        <field name ="GameVariationNumber" type ="System.Byte" encoding="BCD" length="1"/>
+        <field name ="GeneralFlag" type ="GeneraFlagStatus"/>
+      </subtype>
+      <subtype name ="RequestAllLoggedEventsPoll">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.RequestAllLogged"/>
+      </subtype>
+      <subtype name ="PurgeEventsPoll">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.PurgeEvents"/>
+        <field name ="PollSequenceNumber" type ="System.Byte"/>
+        <field name ="PurgeEventsFlag" type ="System.Byte" default="0x00"/>
+        <field name ="EventSequenceNumber" type ="System.Byte"/>
+      </subtype>
+      <subtype name ="NoteAcceptorMaintenancePoll">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.NoteAcceptorMaintenance"/>
+        <field name ="NoteAcceptorLsbFlag" type ="System.Byte"/>
+        <field name ="NoteAcceptorMsbFlag" type ="NoteAcceptorFlagCharacteristics"/>
+      </subtype>
+      <subtype name ="HopperTicketPrinterMaintenancePoll">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.HopperTicketPrinterMaintenance"/>
+        <field name ="HopperRefillAmount" type="System.Decimal" encoding ="BinaryLE" length ="4"/>
+        <field name ="HopperCollectLimit" type="System.Decimal" encoding ="BinaryLE" length ="4"/>
+        <field name ="TicketOutLimit" type="System.Decimal" encoding="BinaryLE" length ="4"/>
+        <field name ="TicketFlag" type="System.UInt16" length="2"/>
+        <field name ="Reserved" type="System.Byte" default="0x00"/>
+        <field name ="DoRefill" type="System.Decimal" encoding ="BinaryLE" length ="4"/>
+      </subtype>
+      <subtype name ="LinkedProgressiveAwardAcknowledgedPoll">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.LinkedProgressiveAwardAcknowledged"/>
+      </subtype>
+      <subtype name ="EgmGeneralResetPollV15">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.EgmGeneralReset"/>
+        <field name ="GeneralResetFlagStatus" type ="GeneralResetFlagCharacteristics"/>
+        <subtype name ="EgmGeneralResetPoll">
+          <field name ="State" type="EgmMainLineCurrentStatus"/>
+        </subtype>
+      </subtype>
+      <subtype name ="SpecificPromotionalAdvisoryPoll">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.SpecificPromotionalAdvisoryMessageA"/>
+        <field name ="AdvisoryMessageFlag" type ="AdvisoryMessageFlagCharacteristics"/>
+        <field name="AdvisoryLength" type="System.Byte"/>
+        <field name="AdvisoryText" type="System.String" encoding="ASCII" length="AdvisoryLength"/>
+      </subtype>
+      <subtype name ="EgmTowerLightMaintenancePoll">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.EgmTowerLightMaintenance"/>
+        <field name ="LightFlashFlag" type ="LightFlashFlagType"/>
+      </subtype>
+      <subtype name ="EctToEgmPoll">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.EctToEgmPoll"/>
+        <field name="PollSequenceNumber" type="System.Byte"/>
+        <field name ="EctToEgmPollFlag" type ="EctToEgmPollFlags"/>
+        <field name ="OCAmount" type="System.Decimal" encoding="BCDWithLSBFirst" length ="3"/>
+        <field name ="EAmount" type="System.Decimal" encoding="BinaryLE" length ="4"/>
+      </subtype>
+      <subtype name ="EctFromEgmLockupRequestPoll">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.EctFromEgmLockupRequestPoll"/>
+      </subtype>
+      <subtype name ="EctLockupResetPoll">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.EctLockupResetPoll"/>
+        <field name="TransferStatus" type="EctFromEgmStatus"/>
+      </subtype>
+      <subtype name ="InvalidFunctionCodeMessage">
+        <assign name ="MessageType" type ="FunctionCodes" value="FunctionCodes.InvalidFunctionCode"/>
+      </subtype>
+      <subtype name="CraneConfigurationPoll">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.CraneConfigurationPoll"/>
+        <field name="NoofCraneLevels" type="System.Byte"/>
+        <field name="Size" type="System.Byte" default="0"/>
+        <list name ="CraneList" type ="CraneLevelDetails">
+          <condition test ="CraneList.Count &lt; NoofCraneLevels"/>
+        </list>
+      </subtype>
+      <subtype name="CraneLockupAcknowledgementPoll">
+        <assign name ="MessageType" type ="FunctionCodes" value ="FunctionCodes.CraneLockupAcknowledgementPoll"/>
+        <field name="Length" type="System.Byte"/>
+        <field name="CraneText" type="System.String" encoding="ASCII" length="Length"/>
+      </subtype>
+    </subtype>
+
+    <subtype name ="Response">
+    
+      <subtype name="SeekEgmBroadcastResponse">
+        <discriminant name="MessageType" value="FunctionCodes.SeekEgmBroadcastResponse"/>
+        <field name="EgmSerialNumber" type="System.Decimal" encoding="BCDWithLSBFirst" length="3"/>
+        <field name="ManufacturerId" type="System.Byte" encoding="BCD" length="1"/>
+      </subtype>
+      <subtype name ="EventResponse">
+        <discriminant name ="MessageType" value="FunctionCodes.Event" />
+        <field name ="EventData" type ="Event"/>
+      </subtype>
+      <subtype name ="GeneralStatusResponse">
+        <discriminant name ="MessageType" value="FunctionCodes.GeneralStatus" />
+        <field name ="FlagA" type ="GeneralStatusFlagA"/>
+        <field name ="FlagB" type ="GeneralStatusFlagB"/>
+        <field name ="State" type ="EgmMainLineCurrentStatus"/>
+      </subtype>
+      <subtype name ="NoteAcceptorStatusResponse">
+        <discriminant name ="MessageType" value="FunctionCodes.NoteAcceptorStatusResponse" />
+        <field name ="ReservedFlagAByte" type ="System.Byte"/>
+        <field name ="FlagA" type ="NoteAcceptorStatusFlagA"/>
+        <field name ="NoteAcceptorLsbFlag" type ="System.Byte"/>
+        <field name ="NoteAcceptorMsbFlag" type ="NoteAcceptorFlagCharacteristics"/>
+        <field name ="Reserved" type ="System.Decimal" encoding ="BinaryLE" length ="4"/>
+        <list name="NoteAcceptorDescriptorString" type="System.Byte">
+          <condition test="NoteAcceptorDescriptorString.Count &lt; 40" />
+        </list>
+      </subtype>
+      <subtype name ="ProgressiveMetersResponse">        
+        <discriminant name ="MessageType" value="FunctionCodes.ProgressiveMetersResponse" />
+        <field name ="GameDetails" type ="GameDetails"/>        
+        <subtype name ="ProgressiveMetersV16Response">
+          <discriminant name ="ProtocolVersion" value="ProtocolVersion.V16"/>
+          <field name ="ONumber" type ="System.Byte"/>
+          <field name ="Vares" type ="System.Byte"/>
+          <field name ="Pmrres" type ="System.UInt32" length ="4"/>
+          <field name ="ProgressiveLevelNumber" type ="System.Byte"/>
+          <field name ="Size" type ="System.Byte"/>
+          <list name="ProgressiveDataList" type ="ProgressiveGroupV16">
+            <condition test ="ProgressiveDataList.Count &lt; ProgressiveLevelNumber"/>
+          </list>
+        </subtype>        
+        <subtype name ="ProgressiveMetersV15Response">
+          <discriminant name ="ProtocolVersion" value="ProtocolVersion.V15"/>          
+          <field name ="ProgressiveLevelNumber" type ="System.Byte"/>
+          <list name="ProgressiveDataList" type ="ProgressiveGroupV15">
+            <condition test ="ProgressiveDataList.Count &lt; ProgressiveLevelNumber"/>
+          </list>          
+        </subtype>
+      </subtype>
+      
+      <subtype name ="ProgressiveConfigurationResponse">
+        <discriminant name ="MessageType" value="FunctionCodes.ProgressiveConfigurationResponse" />
+        <field name ="GameVersionNumber" type ="System.UInt16" length ="2"/>
+        <field name ="GameVariationNumber" type ="System.Byte" encoding="BCD" length="1"/>
+        <field name ="Reserved" type ="System.Int32" length ="4"/>
+        <field name ="ProgressiveConfigurationNumber" type ="System.Byte">
+          <bitfield name="NumberOfProgressiveLevels" shift ="0" width ="4"/>
+          <bitfield  name ="ProgressiveReserved" shift ="4" width ="3"/>
+          <bitfield  name ="CustomSAPCapabilityFlag" shift ="7" width ="1"/>
+        </field>        
+        <field name ="ProgressiveConfigurationSize" type ="System.Byte"/>
+        <list name="ProgressiveConfigurationList" type ="ProgressiveConfigurationGroup">
+          <condition test ="ProgressiveConfigurationList.Count &lt; NumberOfProgressiveLevels"/>
+        </list>
+      </subtype>      
+      <subtype name ="BetMetersResponse">
+        <discriminant name ="MessageType" value="FunctionCodes.BetMetersStatus" />
+        <field name ="GameVersionNumber" type ="System.UInt16" length ="2"/>
+        <field name ="ReservedV" type ="System.Byte"/>
+        <field name ="ReservedData" type ="System.UInt32" length ="4"/>
+        <field name ="BetMeterFlag" type ="System.UInt16" length ="2"/>
+        <field name ="MaxLines" type ="System.UInt16" length ="2"/>
+        <field name ="MaxBet" type ="System.Decimal" encoding="BinaryLE" length ="2"/>
+        <field name ="GameBetFactorA" type ="System.UInt16" length ="2"/>
+        <field name ="GameBetFactorB" type ="System.UInt16" length ="2"/>
+        <field name ="ReservedE" type ="System.UInt32" length ="4"/>
+        <field name ="Size" type ="System.Byte"/>
+        <list name="BetCountList" type ="System.UInt32" length="4">
+          <condition test ="BetCountList.Count &lt; BetCategoryCount"/>
+        </list>
+      </subtype>
+      <subtype name ="MultiGameVariationMetersResponse">
+        <discriminant name ="MessageType" value="FunctionCodes.MultiGameVariationMetersResponse" />
+        <field name ="GameVersionNumber" type ="System.UInt16" length ="2"/>
+        <field name ="GameVariationNumber" type ="System.Byte" encoding="BCD" length="1"/>        
+        <field name ="GameStroke" type ="System.UInt32" length ="4"/>
+        <field name ="GameTurnOver" type ="System.UInt32" length ="4"/>
+        <field name ="TotalGameWins" type ="System.UInt32" length ="4"/>
+        <field name ="TotalGameLinkedProgressiveWins" type ="System.UInt32" length ="4"/>
+        <subtype name ="MultiGameVariationMetersResponseV16">
+          <discriminant name="ProtocolVersion" value="ProtocolVersion.V16"/>
+          <field name ="TotalGameWon" type ="System.UInt32" length ="4"/>
+        </subtype>
+      </subtype>
+      <subtype name ="PlayerChoiceMetersResponse">
+        <discriminant name ="MessageType" value="FunctionCodes.PlayerChoiceMetersResponse" />
+        <field name ="GameVersionNumber" type ="System.UInt16" length ="2"/>
+        <field name ="ReservedFlag" type ="System.UInt16" length ="2"/>
+        <field name ="NoOfRepeatedEntries" type ="System.Byte"/>
+        <field name ="Size" type ="System.Byte"/>
+        <list name ="PlayerChoiceMetersList" type ="PlayerChoiceMetersCharacteristics">
+          <condition test ="PlayerChoiceMetersList.Count &lt; NoOfRepeatedEntries"/>
+        </list>        
+      </subtype>
+      <subtype name ="MeterGroupContributionResponse">
+        <discriminant name ="MessageType" value="FunctionCodes.MeterGroupContributionResponse" />
+        <field name ="MetersResponseFlags" type ="System.Byte">
+          <bitfield name="MeterCount" shift ="0" width ="3"/>
+          <bitfield  name ="LinkedProgressiveAvailable" shift ="7" width ="1"/>
+        </field>
+        <field name ="LastGameVersionNumber" type ="System.UInt16" length ="2"/>
+        <list name="MeterGroups" type ="MeterInfo">
+          <condition test ="MeterGroups.Count &lt; MeterCount + 1"/>
+        </list>        
+        <subtype name ="LPContribution">
+          <discriminant name="LinkedProgressiveAvailable" value ="true"/>
+          <field name="LPContributionData" type="LPContributionDataBlock"/>
+        </subtype>
+      </subtype>
+      <subtype name ="PurgeEventsPollAcknowledgementResponse">
+        <discriminant name ="MessageType" value="FunctionCodes.PurgeEventsPollResponse" />
+        <subtype name ="PurgeEventsPollAcknowledgementResponseV16">
+          <discriminant name ="ProtocolVersion" value="ProtocolVersion.V16"/>
+          <field name ="PurgeFlag" type ="System.Byte"/>
+          <field name ="PollSequenceNumber" type ="System.Byte"/>
+        </subtype>
+      </subtype>
+      <subtype name ="EgmGameConfigurationResponse">
+        <discriminant name ="MessageType" value="FunctionCodes.EgmGameConfigurationResponse" />
+        <field name ="GameVersionNumber" type ="System.UInt16" length ="2"/>
+        <field name ="CurrentGameVariationNumber" type ="System.Byte" encoding="BCD" length="1"/>
+        <field name ="EgmGameConfigurationFlag" type ="EgmGameConfigurationFlag"/>
+        <field name ="NoOfProgressiveLevels" type ="System.Byte"/>
+        <field name ="ProgressiveLevelBitMask" type ="System.Byte">
+          <bitfield name="Level0LinkedProgressiveType" shift="0" width="1"/>
+          <bitfield name="Level1LinkedProgressiveType" shift="1" width="1"/>
+          <bitfield name="Level2LinkedProgressiveType" shift="2" width="1"/>
+          <bitfield name="Level3LinkedProgressiveType" shift="3" width="1"/>
+          <bitfield name="Level4LinkedProgressiveType" shift="4" width="1"/>
+          <bitfield name="Level5LinkedProgressiveType" shift="5" width="1"/>
+          <bitfield name="Level6LinkedProgressiveType" shift="6" width="1"/>
+          <bitfield name="Level7LinkedProgressiveType" shift="7" width="1"/>
+        </field>
+       
+        <field name ="ProgressiveGroupIdOfGVN" type ="System.UInt16" length ="2"/>
+        <field name ="NoOfVariationAvailable" type ="System.Byte"/>
+        <field name ="Size" type ="System.Byte"/>
+
+        <subtype name="EgmGameConfigurationV16">
+          <discriminant name ="ProtocolVersion" value="ProtocolVersion.V16"/>
+          <list name ="GameVariations" type ="GameVariation">
+            <condition test="GameVariations.Count &lt; NoOfVariationAvailable"/>
+          </list>
+        </subtype>
+
+        <subtype name ="EgmGameConfigurationV15">
+          <discriminant name ="ProtocolVersion" value="ProtocolVersion.V15"/>
+          <list name ="GameVariations" type ="GameVariationV15">
+            <condition test="GameVariations.Count &lt; NoOfVariationAvailable"/>
+          </list>
+        </subtype>
+        <escape onRead="UpdateProgressiveLevelMap"/>        
+      </subtype>
+      <subtype name ="EgmConfigurationResponse">
+        <discriminant name ="MessageType" value="FunctionCodes.EgmConfigurationResponse"/>
+        <field name ="EgmSerialNumber" type ="System.Decimal" encoding ="BCDWithLSBFirst" length ="3" />
+        <field name ="ManufacturerId" type ="System.Byte" encoding="BCD" length="1"/>
+        <field name ="NetworkProtocolVersion" type ="NetworkProtocolVersionCharacteristics"/>
+        <field name ="FlagA" type ="EgmConfigurationFlagA"/>
+        <field name ="FlagB" type ="EgmConfigurationFlagB"/>
+        <field name ="OldCreditDenomination" type ="System.Decimal" encoding="BCDWithLSBFirst" length ="2" precision="2"  clearAttributes="AccessMask" setAttributes="Private"/>
+        <field name ="OldTokenDenomination" type ="System.Decimal" encoding="BCDWithLSBFirst" length ="2"  precision="2" clearAttributes="AccessMask" setAttributes="Private"/>
+        <field name ="BaseSoftwareVersionNumber" type ="System.UInt16" length ="2"/>
+        <field name ="TotalNumberOfGamesAvailable" type="System.Byte"/>
+        <field name ="TotalNumberOfGamesEnabled" type="System.Byte"/>
+        <field name ="GameVersionNumber" type ="System.UInt16" length ="2"/>
+        <field name ="GameVariationNumber" type ="System.Byte" encoding="BCD" length="1"/>
+        
+        <subtype name="EgmConfigurationResponseV16">
+          <discriminant name="ProtocolVersion" value="ProtocolVersion.V16"/>
+          <field name ="FlagSReservedByte" type ="System.Byte"/>
+          <field name ="FlagS" type ="EgmConfigurationFlagS"/>
+          <field name ="NewCreditDenomination" type="System.Decimal" encoding="BinaryLE" length ="4" precision="2" clearAttributes="AccessMask" setAttributes="Private"/>
+          <field name ="NewTokenDenomination" type="System.Decimal" encoding="BinaryLE" length ="4" precision="2" clearAttributes="AccessMask" setAttributes="Private"/>
+          <field name ="MaxDenom" type="System.Decimal" encoding="BinaryLE" length ="4" precision="2" clearAttributes="AccessMask" setAttributes="Private"/>
+          <field name ="Reserved" type="System.Decimal" encoding="BinaryLE" length ="4" precision="2" clearAttributes="AccessMask" setAttributes="Private"/>
+          <field name ="MinRtp" type ="System.Decimal" encoding="BinaryLE" length ="2" precision="2" clearAttributes="AccessMask" setAttributes="Private"/>
+          <field name ="MaxRtp" type ="System.Decimal" encoding="BinaryLE" length ="2" precision="2" clearAttributes="AccessMask" setAttributes="Private"/>
+          <field name ="MaxSd" type ="System.Decimal" encoding="BinaryLE" length ="2" clearAttributes="AccessMask" setAttributes="Private" />
+          <field name ="MaximumLines" type ="System.Decimal" encoding="BinaryLE" length ="2" clearAttributes="AccessMask" setAttributes="Private" />
+          <field name ="MaximumBet" type ="System.Decimal" encoding="BinaryLE" length ="4" precision="2" clearAttributes="AccessMask" setAttributes="Private"/>
+          <field name ="MaxNpWin" type="System.Decimal" encoding="BinaryLE" length ="4" precision="2" clearAttributes="AccessMask" setAttributes="Private"/>
+          <field name ="MaxPWin" type="System.Decimal" encoding="BinaryLE" length ="4" precision="2" clearAttributes="AccessMask" setAttributes="Private"/>
+          <field name ="MaxEct" type="System.Decimal" encoding="BinaryLE" length ="4" precision="2" clearAttributes="AccessMask" setAttributes="Private"/>
+        </subtype>
+      </subtype>
+      <subtype name ="ProgramHashResponse">
+        <discriminant name ="MessageType" value="FunctionCodes.ProgramHashResponse" />
+        <field name ="Reserved" type="System.Byte"/>
+        <escape onRead="ParseProgramHash"/> 
+      </subtype>
+      <subtype name ="EctToEgmAcknowledgementResponse">
+        <discriminant name ="MessageType" value ="FunctionCodes.EctToEgmAcknowledgementResponse"/>
+        <field name ="ReservedFlag" type="System.Byte"/>
+        <field name ="EctPollSequenceNumber" type="System.Byte"/>
+        <field name ="TotalCashlessCredit" type ="System.UInt32" length ="4"/>
+      </subtype>
+      <subtype name="CraneStatusResponse">
+        <discriminant name="MessageType" value="FunctionCodes.CraneStatusResponse"/>
+        <field name="NoofCraneLevels" type="System.Byte"/>
+        <field name="Size" type="System.Byte"/>
+        <list name ="CraneList" type ="CraneLevelDetails">
+          <condition test ="CraneList.Count &lt; NoofCraneLevels"/>
+        </list>
+      </subtype>
+      
+      
+      <subtype name ="InvalidFunctionCodeResponse">
+        <discriminant name ="MessageType" value="FunctionCodes.InvalidFunctionCode"/>
+      </subtype>
+    </subtype>
+  </type>
+
+  <type name ="Message">
+    <field name ="Header" type ="DataLinkLayer"/>
+    <escape onRead="PostParse"/>
+    <field name ="ApplicationData" type ="ApplicationMessage"/>
+    <escape onRead="SetTotalLength"/>
+    <escape onWrite="UpdateLength" onRead="UpdateProtocolVersion"/>
+    <escape onRead="ComputeChecksum" onWrite="ComputeChecksum"/>
+    <field name ="Checksum" type ="System.UInt16" encoding="BinaryBE" length ="2"/>
+  </type>
+
+  <type name ="DataLinkLayer">
+    <field name ="Address" type ="System.Byte"/>
+    <field name ="Length" type ="System.Byte"/>
+    <field name ="Control" type ="System.Byte" default="0x01">
+      <bitfield name="ProtocolVersionFlag" shift="5" width="2"/>
+      <bitfield name ="ControlBit" shift="7" width="1"/>
+    </field>
+  </type>
+
+</schema>

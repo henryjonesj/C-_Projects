@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="mailto:jhantin@ballytech.com?Subject=QComMetadata" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="mailto:jhantin@ballytech.com?Subject=QComMetadata">
+
+  <xs:element name="QComMetadata" type="tns:QComMetadata">
+    <xs:key name="Code">
+      <xs:selector xpath="tns:MeterDefinitions/tns:MeterDefinition" />
+      <xs:field xpath="@Code" />
+    </xs:key>
+  </xs:element>
+
+  <xs:complexType name ="QComMetadata">
+    <xs:sequence>
+      <xs:element name="MeterDefinitions" type="tns:MeterDefinitions"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name ="MeterDefinitions">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="MeterDefinition" type="tns:MeterDefinition" />
+    </xs:sequence>
+    <xs:anyAttribute namespace="##any" />
+  </xs:complexType>
+
+  <xs:complexType name = "MeterDefinition">
+    <xs:attribute name = "Name" type ="xs:string" use="required"/>
+    <xs:attribute name = "Code" type ="xs:string" use="required"/>
+    <xs:attribute name = "IncrementThresholdCabinet" type="xs:int" use="optional" default="0"/>
+    <xs:attribute name = "IncrementThresholdGame" type="xs:int" use="optional" default="0"/>
+    <xs:attribute name = "Unit" type="xs:string" use="optional" default="Cent"/>
+  </xs:complexType>
+</xs:schema>

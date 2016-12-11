@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<QComMetadata xmlns="mailto:jhantin@ballytech.com?Subject=QComMetadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="mailto:jhantin@ballytech.com?Subject=DxsMetadata .\QComMetadata.xsd">
+  <MeterDefinitions>
+    <MeterDefinition Name="TotalEgmStroke"                            Code="0x0000"     IncrementThresholdCabinet="30" IncrementThresholdGame="30000" Unit="Count"/>
+    <MeterDefinition Name="TotalEgmTurnover"                          Code="0x0001"     IncrementThresholdCabinet="10000" IncrementThresholdGame="20000" Unit ="Cent"/>
+    <MeterDefinition Name="TotalEgmWins"                              Code="0x0002"     IncrementThresholdCabinet="1100000" IncrementThresholdGame="2200000" Unit ="Cent"/>
+    <MeterDefinition Name="TotalEgmCancelCredit"                      Code="0x0003"     IncrementThresholdCabinet="1100000" Unit ="Cent"/>
+    <MeterDefinition Name="TotalEgmCashTicketOut"                     Code="0x0004" Unit ="Cent"/>
+    <MeterDefinition Name="TotalEgmCentsIn"                           Code="0x0005"     IncrementThresholdCabinet="50000" Unit ="Cent"/>
+    <MeterDefinition Name="TotalEgmCentsOut"                          Code="0x0006"     IncrementThresholdCabinet="50000" Unit ="Cent"/>
+    <MeterDefinition Name="TotalEgmHPSAPWins"                         Code="0x0007"     IncrementThresholdCabinet="2600000" Unit ="Cent"/>
+    <MeterDefinition Name="TotalEgmLinkedProgressiveWins"             Code="0x0008" Unit ="Cent"/>
+    <MeterDefinition Name="TotalEgmCashTicketIn"                      Code="0x0009" Unit ="Cent"/>
+    <MeterDefinition Name="TotalEgmPIDAccessed"                       Code="0x000A"     IncrementThresholdCabinet="30" Unit="Count"/>
+    <MeterDefinition Name="TotalEgmGamesWon"                          Code="0x000B"     IncrementThresholdCabinet="30" IncrementThresholdGame="30000" Unit="Count"/>
+    <MeterDefinition Name="TotalEgmSAPWins"                           Code="0x000C"     IncrementThresholdCabinet="2600000" Unit ="Cent"/>
+    <MeterDefinition Name="TotalEgmHopperRefills"                     Code="0x0010"     IncrementThresholdCabinet="100000" Unit ="Cent"/>
+    <MeterDefinition Name="TotalEgmCoinsTokensIn"                     Code="0x0011"     IncrementThresholdCabinet="10000" Unit ="Cent"/>
+    <MeterDefinition Name="TotalEgmCoinsTokenOut"                     Code="0x0012"     IncrementThresholdCabinet="50000" Unit ="Cent"/>
+    <MeterDefinition Name="TotalEgmCoinsTokensToCashbox"              Code="0x0013"     IncrementThresholdCabinet="10000" Unit ="Cent"/>
+    <MeterDefinition Name="TotalEgmCashlessCreditIn"                  Code="0x0014" Unit ="Cent"/>
+    <MeterDefinition Name="TotalEgmCashlessCreditOut"                 Code="0x0015" Unit ="Cent"/>
+    <MeterDefinition Name="TotalEgmNoteAcceptorCentsIn"               Code="0x0016"     IncrementThresholdCabinet="50000" Unit ="Cent"/>
+    <MeterDefinition Name="TotalEgmNotesInCount"                      Code="0x0017"     IncrementThresholdCabinet="5" Unit="Count"/>
+    <MeterDefinition Name="TotalResidualCreditRemovalTurnover"        Code="0x0018"     IncrementThresholdCabinet="1000" Unit ="Cent"/>
+    <MeterDefinition Name="TotalResidualCreditRemovalWins"            Code="0x0019"     IncrementThresholdCabinet="1000" Unit ="Cent"/>
+    <MeterDefinition Name="TotalRejectedEnabledNotes"                 Code="0x001A"     IncrementThresholdCabinet="5" Unit="Count"/>
+    <MeterDefinition Name="TotalEgmGambleTurnover"                    Code="0x001B"     IncrementThresholdCabinet="510000" Unit ="Cent"/>
+    <MeterDefinition Name="TotalEgmGambleWins"                        Code="0x001C"     IncrementThresholdCabinet="1100000" Unit ="Cent"/>
+    <MeterDefinition Name="TotalEgmCoinsTokensCleared"                Code="0x001D"     IncrementThresholdCabinet="5000000" Unit ="Cent"/>
+    <MeterDefinition Name="TotalEgmNotesCleared"                      Code="0x001E"     IncrementThresholdCabinet="10000000" Unit ="Cent"/>
+    <MeterDefinition Name="TotalEgmFiveNotesIn"                       Code="0x0020"     IncrementThresholdCabinet="5" Unit="Count"/>
+    <MeterDefinition Name="TotalEgmTenNotesIn"                        Code="0x0021"     IncrementThresholdCabinet="5" Unit="Count"/>
+    <MeterDefinition Name="TotalEgmTwentyNotesIn"                     Code="0x0022"     IncrementThresholdCabinet="5" Unit="Count"/>
+    <MeterDefinition Name="TotalEgmFiftyNotesIn"                      Code="0x0023"     IncrementThresholdCabinet="5" Unit="Count"/>
+    <MeterDefinition Name="TotalEgmHundredNotesIn"                    Code="0x0024"     IncrementThresholdCabinet="5" Unit="Count"/>
+    
+  </MeterDefinitions>
+</QComMetadata>

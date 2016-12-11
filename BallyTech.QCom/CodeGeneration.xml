@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<job>
+  <xslt input="metadata\QComMetadata.xml" stylesheet="metadata\QComMetadata.ExtractEnumurations.xslt" output="messages\QComMetadata.ExtractedEnumerations.xml" />
+  <pipeline>
+    <filter type="BallyTech.CodeGeneration.BinaryMessage.Processor, BallyTech.CodeGeneration.BinaryMessage">
+      <property name="InputFile">messages\QComMessages.xml</property>
+      <property name="Namespace">BallyTech.QCom.Messages</property>
+    </filter>
+    <filter type="BallyTech.CodeGeneration.DoubleDispatch.Processor, BallyTech.CodeGeneration.DoubleDispatch" />
+    <filter type="BallyTech.CodeGeneration.DoubleDispatch.EnumProcessor, BallyTech.CodeGeneration.DoubleDispatch" />
+    <filter type="BallyTech.CodeGeneration.CompactFormatter.InsertGenerateICSerializableAttributeFilter, BallyTech.CodeGeneration.CompactFormatter" />
+    <filter type="BallyTech.CodeGeneration.Core.OutputWriter, BallyTech.CodeGeneration.Core">
+      <property name="OutputFile">messages\QComMessages.cs</property>
+    </filter>
+  </pipeline>
+  <pipeline>
+    <filter type="BallyTech.CodeGeneration.InterfaceProxy.Processor, BallyTech.CodeGeneration.InterfaceProxy">
+      <property name="AssemblyPath">..\BallyTech.Gtm\bin\%ConfigurationName%\BallyTech.Gtm.dll</property>
+      <property name="TypeName">BallyTech.Gtm.IEgmObserver</property>
+      <property name="ProxyTypeName">BallyTech.QCom.Model.Egm.EgmObserverCollection</property>
+      <property name="CommandBaseTypeName">BallyTech.QCom.Model.Egm.EgmObserverCollection+CommandBase</property>
+    </filter>
+    <filter type="BallyTech.CodeGeneration.InterfaceProxy.Processor, BallyTech.CodeGeneration.InterfaceProxy">
+      <property name="AssemblyPath">..\BallyTech.Gtm\bin\%ConfigurationName%\BallyTech.Gtm.dll</property>
+      <property name="TypeName">BallyTech.Gtm.IEgmErrorObserver</property>
+      <property name="ProxyTypeName">BallyTech.QCom.Model.EgmErrorObserverCollection</property>
+      <property name="CommandBaseTypeName">BallyTech.QCom.Model.EgmErrorObserverCollection+CommandBase</property>
+    </filter>
+    <filter type="BallyTech.CodeGeneration.InterfaceProxy.Processor, BallyTech.CodeGeneration.InterfaceProxy">
+      <property name="AssemblyPath">..\BallyTech.Gtm\bin\%ConfigurationName%\BallyTech.Gtm.dll</property>
+      <property name="TypeName">BallyTech.Gtm.ILinkObserver</property>
+      <property name="ProxyTypeName">BallyTech.QCom.Model.LinkObserverCollection</property>
+      <property name="CommandBaseTypeName">BallyTech.QCom.Model.LinkObserverCollection+CommandBase</property>
+    </filter>
+    <filter type="BallyTech.CodeGeneration.InterfaceProxy.Processor, BallyTech.CodeGeneration.InterfaceProxy">
+      <property name="AssemblyPath">..\BallyTech.Gtm\bin\%ConfigurationName%\BallyTech.Gtm.dll</property>
+      <property name="TypeName">BallyTech.Gtm.IEgmObserver</property>
+      <property name="ProxyTypeName">BallyTech.QCom.Model.Egm.EgmObserverEventQueue</property>
+      <property name="CommandBaseTypeName">BallyTech.QCom.Model.Egm.EgmObserverEventQueue+CommandBase</property>
+    </filter>
+    <filter type="BallyTech.CodeGeneration.InterfaceProxy.Processor, BallyTech.CodeGeneration.InterfaceProxy">
+      <property name="AssemblyPath">..\BallyTech.Gtm\bin\%ConfigurationName%\BallyTech.Gtm.dll</property>
+      <property name="TypeName">BallyTech.Gtm.IExtendedEgmObserver</property>
+      <property name="ProxyTypeName">BallyTech.QCom.Model.Egm.ExtendedEgmObserverCollection</property>
+      <property name="CommandBaseTypeName">BallyTech.QCom.Model.Egm.ExtendedEgmObserverCollection+CommandBase</property>
+    </filter>
+    <filter type="BallyTech.CodeGeneration.Core.OutputWriter, BallyTech.CodeGeneration.Core">
+      <property name="OutputFile">model\GeneratedCode.cs</property>
+    </filter>
+  </pipeline>
+  <pipeline>
+    <filter type="BallyTech.CodeGeneration.Xsd.Processor, BallyTech.CodeGeneration.Xsd">
+      <property name="XsdFile">metadata\QComMetadata.xsd</property>
+      <property name="Namespace">BallyTech.QCom.Metadata</property>
+    </filter>
+    <filter type="BallyTech.CodeGeneration.Xsd.CompactFrameworkStripper, BallyTech.CodeGeneration.Xsd" />
+    <filter type="BallyTech.CodeGeneration.Core.OutputWriter, BallyTech.CodeGeneration.Core">
+      <property name="OutputFile">Metadata\QComMetadata.cs</property>
+    </filter>
+  </pipeline>
+  <pipeline>
+    <filter type="BallyTech.CodeGeneration.Core.OutputWriter, BallyTech.CodeGeneration.Core">
+      <property name="OutputFile">ICSerializableImpl.cs</property>
+    </filter>
+  </pipeline>
+</job>

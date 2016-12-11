@@ -1,0 +1,477 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{645BD9AE-83A3-437B-AAF6-60F805CBEAB0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BallyTech.QCom</RootNamespace>
+    <AssemblyName>BallyTech.QCom</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>WindowsCE</PlatformFamilyName>
+    <PlatformID>E2BECB1F-8C8C-41ba-B736-9BE7D946A398</PlatformID>
+    <OSVersion>5.0</OSVersion>
+    <DeployDirSuffix>BallyTech.QCom</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NativePlatformName>Windows CE</NativePlatformName>
+    <FormFactorID>
+    </FormFactorID>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <CodeContractsAssemblyMode>0</CodeContractsAssemblyMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>False</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>False</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>False</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>False</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>False</CodeContractsRedundantAssumptions>
+    <CodeContractsInferRequires>False</CodeContractsInferRequires>
+    <CodeContractsInferEnsures>False</CodeContractsInferEnsures>
+    <CodeContractsInferObjectInvariants>False</CodeContractsInferObjectInvariants>
+    <CodeContractsSuggestAssumptions>False</CodeContractsSuggestAssumptions>
+    <CodeContractsSuggestRequires>True</CodeContractsSuggestRequires>
+    <CodeContractsSuggestEnsures>False</CodeContractsSuggestEnsures>
+    <CodeContractsSuggestObjectInvariants>False</CodeContractsSuggestObjectInvariants>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly>
+    </CodeContractsCustomRewriterAssembly>
+    <CodeContractsCustomRewriterClass>
+    </CodeContractsCustomRewriterClass>
+    <CodeContractsLibPaths>
+    </CodeContractsLibPaths>
+    <CodeContractsExtraRewriteOptions>
+    </CodeContractsExtraRewriteOptions>
+    <CodeContractsExtraAnalysisOptions>
+    </CodeContractsExtraAnalysisOptions>
+    <CodeContractsBaseLineFile>
+    </CodeContractsBaseLineFile>
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>DoNotBuild</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Configuration\ApplicationMessage.cs" />
+    <Compile Include="Configuration\ConfigurationManager.cs" />
+    <Compile Include="Configuration\ConfigurationRequestTimeOutHandler.cs" />
+    <Compile Include="Configuration\CurrentEgmConfiguration.cs" />
+    <Compile Include="Configuration\EgmConfigurationEqualityComparer.cs" />
+    <Compile Include="Configuration\GameConfigurationEqualityComparer.cs" />
+    <Compile Include="Configuration\GameConfigurationExtension.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\GameProgressiveConfigurationEqualityComparer.cs" />
+    <Compile Include="Configuration\IGameProgressiveConfiguration.cs" />
+    <Compile Include="Configuration\IQComEgmConfiguration.cs" />
+    <Compile Include="Configuration\Procedures\ConfigurationProcedureBase.cs" />
+    <Compile Include="Configuration\Procedures\ConfigurationProcedureFactory.cs" />
+    <Compile Include="Configuration\Procedures\DenominationSwitchProcedure.cs" />
+    <Compile Include="Configuration\Procedures\HotSwitchProcedure.cs" />
+    <Compile Include="Configuration\Procedures\QComConfigurationProcedure.cs" />
+    <Compile Include="Configuration\Procedures\SharedProgressiveConfigurationProcedure.cs" />
+    <Compile Include="Configuration\Procedures\SharedProgressivePgIdSwitchingProcedure.cs" />
+    <Compile Include="Configuration\ProgressiveConfigurationEqualityComparer.cs" />
+    <Compile Include="Configuration\QComConfigurationExtension.cs" />
+    <Compile Include="Configuration\QComProgressiveConfiguration.cs" />
+    <Compile Include="Configuration\RequestHandlers\AttendantConfigurationRequestHandler.cs" />
+    <Compile Include="Configuration\Response\EgmGameConfigurationResponse.cs" />
+    <Compile Include="Configuration\Response\EgmGameProgressiveConfiguration.cs" />
+    <Compile Include="Configuration\Response\ProgressiveConfigurationResponse.cs" />
+    <Compile Include="Configuration\Response\ProgressiveLevelConfiguration.cs" />
+    <Compile Include="Model\EctFromEgmMonitor.cs" />
+    <Compile Include="Messages\EctToEgmPoll.cs" />
+    <Compile Include="Messages\Events\CancelCredit.cs" />
+    <Compile Include="Messages\Events\CashTicketInRequest.cs" />
+    <Compile Include="Messages\Events\CashTicketOutPrintFailure.cs" />
+    <Compile Include="Messages\Events\CashTicketOutPrintSuccessful.cs" />
+    <Compile Include="Messages\Events\CashTicketOutRequest.cs" />
+    <Compile Include="Messages\Events\CashTicketPrinted.cs" />
+    <Compile Include="Messages\Events\DenominationChanged.cs" />
+    <Compile Include="Messages\Events\ECTFromEGMNew.cs" />
+    <Compile Include="Messages\Events\ECTfromEGMOld.cs" />
+    <Compile Include="Messages\Events\EGMTicketInAborted.cs" />
+    <Compile Include="Messages\Events\EGMTicketInTimeOut.cs" />
+    <Compile Include="Messages\Events\EXTJIPIconDisplayEnabled.cs" />
+    <Compile Include="Messages\Events\GameVariationEnabled.cs" />
+    <Compile Include="Messages\Events\HopperCalibrated.cs" />
+    <Compile Include="Messages\Events\HopperLevelMismatchExtendedData.cs" />
+    <Compile Include="Messages\Events\HopperOverpayAmount.cs" />
+    <Compile Include="Messages\Events\HopperPayout.cs" />
+    <Compile Include="Messages\Events\HopperRefillRecorded.cs" />
+    <Compile Include="Messages\Events\InvalidProgressiveConfiguration.cs" />
+    <Compile Include="Messages\Events\LargeWin.cs" />
+    <Compile Include="Messages\Events\LicenseKeyDetected.cs" />
+    <Compile Include="Messages\Events\LicenseKeyMissing.cs" />
+    <Compile Include="Messages\Events\LinkedProgressiveAward.cs" />
+    <Compile Include="Messages\Events\ManufacturerSpecificEvent.cs" />
+    <Compile Include="Messages\Events\NewGameSelected.cs" />
+    <Compile Include="Messages\Events\NonProductionLicenseKeyDetected.cs" />
+    <Compile Include="Messages\Events\NVRAMCleared.cs" />
+    <Compile Include="Messages\Events\OldResidualCancelCreditLockUp.cs" />
+    <Compile Include="Messages\Events\ProgressiveConfigurationChanged.cs" />
+    <Compile Include="Messages\Events\ResidualCancelCreditLockUp.cs" />
+    <Compile Include="Messages\Events\StandAloneProgressiveAwardV15.cs" />
+    <Compile Include="Messages\Events\StandAloneProgressiveAwardV16.cs" />
+    <Compile Include="Messages\Events\SystemLockupUserResponse.cs" />
+    <Compile Include="Messages\Events\TopNpPrizeHit.cs" />
+    <Compile Include="Messages\Events\UnknownEvent.cs" />
+    <Compile Include="Messages\IMessageSender.cs" />
+    <Compile Include="Messages\ProgressiveConfigurationGroup.cs" />
+    <Compile Include="Messages\ProgressiveConfigurationResponse.cs" />
+    <Compile Include="Messages\QComRawDateTime.cs" />
+    <Compile Include="Model\Builders\ExternalJackpotInformationPollBuilder.cs" />
+    <Compile Include="Model\EctToEgmResponseTimeoutDetector.cs" />
+    <Compile Include="Model\Egm\Devices\MysteryInformationDisplay.cs" />
+    <Compile Include="Model\Egm\ExtendedEgmEventData.cs" />
+    <Compile Include="Model\Egm\ExtendedEgmObserverCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Egm\LinkedMysteryLine.cs" />
+    <Compile Include="Model\Egm\LockStateInfo.cs" />
+    <Compile Include="Model\Egm\MeterRequestScheduler.cs" />
+    <Compile Include="Model\Egm\OptionalDetails.cs" />
+    <Compile Include="Model\Egm\PaymentCompletedProgressiveJackpot.cs" />
+    <Compile Include="Model\Egm\PlayerInformationDisplay.cs" />
+    <Compile Include="Model\Egm\GameMeterUpdateTracker.cs" />
+    <Compile Include="Model\Egm\SharedLinkedProgressiveLine.cs" />
+    <Compile Include="Model\EventsListeners\EventDataSizeMapping.cs" />
+    <Compile Include="Model\EventsListeners\EventListenerCollectionBase.cs" />
+    <Compile Include="Model\FundTransferAuthorizationExtention.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Meters\UnreasonableMeterIncrementTestResult.cs" />
+    <Compile Include="Model\Handlers\EctToEgmPollDispatcher.cs" />
+    <Compile Include="Model\Handlers\MeterRequestHandler.cs" />
+    <Compile Include="Model\Handlers\PlayOutsideLicensedHoursHandler.cs" />
+    <Compile Include="Model\Handlers\ProgramHashHandler.cs" />
+    <Compile Include="Model\Handlers\RaleHandler.cs" />
+    <Compile Include="Model\MysteryBroadcastScheduler.cs" />
+    <Compile Include="Model\GameMeterRequestor.cs" />
+    <Compile Include="Model\Specifications\ConfigurationCompletionSpecification.cs" />
+    <Compile Include="Configuration\ConfigurationRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\RequestHandlers\ConfigurationRequestHandlerBase.cs" />
+    <Compile Include="Configuration\RequestHandlers\ConfigurationRequestHandlerFactory.cs" />
+    <Compile Include="Configuration\ConfigurationSequence.cs" />
+    <Compile Include="Configuration\ConfigurationValidator.cs" />
+    <Compile Include="Configuration\EgmConfigurationExtension.cs" />
+    <Compile Include="Configuration\IQComConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\QComConfiguration.cs" />
+    <Compile Include="Configuration\QComConfigurationCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\QComConfigurationId.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\QComEgmConfiguration.cs" />
+    <Compile Include="Configuration\QComParameterConfiguration.cs" />
+    <Compile Include="Configuration\QComGameConfiguration.cs" />
+    <Compile Include="Configuration\RequestHandlers\RemoteConfigurationRequestHandler.cs" />
+    <Compile Include="Configuration\Response\EgmConfigurationResponse.cs" />
+    <Compile Include="Configuration\Response\EgmConfigurationResponseV16.cs" />
+    <Compile Include="Configuration\AdditionalConfiguration.cs" />
+    <Compile Include="DataReceiver.cs" />
+    <Compile Include="Interaction\EgmTiltScreen.cs" />
+    <Compile Include="Messages\BetMetersResponse.cs" />
+    <Compile Include="Messages\EgmConfigurationResponse.cs" />
+    <Compile Include="Messages\EgmPollAddressConfiguration.cs" />
+    <Compile Include="Messages\InvalidEgmGameConfigurationExceptions.cs" />
+    <Compile Include="Model\EgmErrorNotifier.cs" />
+    <Compile Include="Model\MessageProcessors\NoteAcceptorStatusResponseProcessor.cs" />
+    <Compile Include="Model\Specifications\EgmCentsMetersValidator.cs" />
+    <Compile Include="Model\Specifications\EgmGameConfigurationValidationSpecification.cs" />
+    <Compile Include="Model\Specifications\EventValidationSpecification.cs" />
+    <Compile Include="Model\Specifications\MeterGroupContributionValidationSpecification.cs" />
+    <Compile Include="Model\Specifications\GameMeterValidationSpecification.cs" />
+    <Compile Include="Model\Specifications\MysteryLevelValiditySpecification.cs" />
+    <Compile Include="Model\Specifications\NoteAcceptorStatusResponseSpecification.cs" />
+    <Compile Include="Messages\ProgressiveMetersResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Builders\ConfigurationBasedRequestBuilder.cs" />
+    <Compile Include="Model\Builders\EgmGeneralResetPollBuilder.cs" />
+    <Compile Include="Model\Builders\QComConfigurationBuilder.cs" />
+    <Compile Include="Model\Builders\QComV15ConfigurationBuilder.cs" />
+    <Compile Include="Model\Builders\SpamBuilder.cs" />
+    <Compile Include="Model\EgmDetailsChecker.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\EgmTiltHandler.cs" />
+    <Compile Include="Model\Egm\Devices\SoftwareAuthenticationDevice.cs" />
+    <Compile Include="Model\Egm\GameVariationInfoCollection.cs" />
+    <Compile Include="Model\Egm\MeterRequestInfo.cs" />
+    <Compile Include="Model\Interfaces\IEgmMetersDecorator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\Interfaces\IEgmRequestHandler.cs" />
+    <Compile Include="Model\Egm\ProgressiveLevelInfo.cs" />
+    <Compile Include="Model\Handlers\QComEgmRequestHandler.cs" />
+    <Compile Include="Model\LPBroadCastCounter.cs" />
+    <Compile Include="Model\MessageProcessors\ProgressiveMetersResponseProcessor.cs" />
+    <Compile Include="Model\PlatformInfomationProvider.cs" />
+    <Compile Include="Model\SpamTextExtensions.cs" />
+    <Compile Include="Model\Spam\SpamHandler.cs" />
+    <Compile Include="ICSerializableImpl.cs" />
+    <Compile Include="Interaction\QComActionProcessor.cs" />
+    <Compile Include="Interaction\QComScreen.cs" />
+    <Compile Include="Messages\ApplicationMessage.cs" />
+    <Compile Include="Messages\ByteExtension.cs" />
+    <Compile Include="Messages\CrcVerificationSpecification.cs" />
+    <Compile Include="IPort.cs" />
+    <Compile Include="Messages\CurrentDateTimeBroadcast.cs" />
+    <Compile Include="Messages\EgmGameConfigurationResponse.cs" />
+    <Compile Include="Messages\Event.cs" />
+    <Compile Include="Messages\GeneralStatusPoll.cs" />
+    <Compile Include="Messages\GeneralStatusResponse.cs" />
+    <Compile Include="Messages\InvalidFunctionCodeException.cs" />
+    <Compile Include="Messages\LinkedProgressiveAward.cs" />
+    <Compile Include="Messages\MultiGameVariationMetersResponse.cs" />
+    <Compile Include="Messages\ProgramHashResponse.cs" />
+    <Compile Include="Messages\SeekEgmBroadcastPoll.cs" />
+    <Compile Include="Messages\SiteDetails.cs" />
+    <Compile Include="Metadata\QComMetadata.cs">
+      <DependentUpon>QComMetadata.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Metadata\QComMetadataExtensions.cs" />
+    <Compile Include="Model\Builders\DateTimeBroadcastBuilder.cs" />
+    <Compile Include="Model\Builders\LinkedProgressiveBroadcastBuilder.cs" />
+    <Compile Include="Model\Builders\MeterRequestBuilder.cs" />
+    <Compile Include="Model\Builders\PollAddressConfigurationBuilder.cs" />
+    <Compile Include="Model\Spam\SpamDispatcher.cs" />
+    <Compile Include="Model\Egm\DepositSnapshot.cs" />
+    <Compile Include="Model\Egm\Devices\Cabinet.cs" />
+    <Compile Include="Model\Egm\Devices\CoinAcceptor.cs" />
+    <Compile Include="Model\Egm\Devices\Device.cs" />
+    <Compile Include="Model\Egm\Devices\DeviceCollection.cs" />
+    <Compile Include="Model\Egm\Devices\FundsTransfer\FundsTransferBase.cs" />
+    <Compile Include="Model\Egm\Devices\FundsTransfer\FundsTransferIn.cs" />
+    <Compile Include="Model\Egm\Devices\FundsTransfer\FundsTransferOut.cs" />
+    <Compile Include="Model\Egm\Devices\HopperDevice.cs" />
+    <Compile Include="Model\Egm\Devices\Jackpot\CancelCreditJackpot.cs" />
+    <Compile Include="Model\Egm\Devices\Jackpot\Jackpot.cs" />
+    <Compile Include="Model\Egm\Devices\JackpotDevice.cs" />
+    <Compile Include="Model\Egm\Devices\Jackpot\LargeWin.cs" />
+    <Compile Include="Model\Egm\Devices\NoteAcceptor.cs" />
+    <Compile Include="Model\Egm\Devices\Printer.cs" />
+    <Compile Include="Model\Egm\Devices\Jackpot\ResidualCancelCreditJackpot.cs" />
+    <Compile Include="Model\Egm\Devices\StandAloneProgressiveJackpotHandler.cs" />
+    <Compile Include="Model\Egm\Devices\TicketInDevice.cs" />
+    <Compile Include="Model\Egm\Devices\TicketOutDevice.cs" />
+    <Compile Include="Model\Egm\EgmInfo.cs" />
+    <Compile Include="Model\Egm\FundTransferAuthorization.cs" />
+    <Compile Include="Model\Egm\GamePlayTracker.cs" />
+    <Compile Include="Model\Interfaces\ILinkedProgressiveHandler.cs" />
+    <Compile Include="Model\Interfaces\IVoucherTransaction.cs" />
+    <Compile Include="Model\Interfaces\IVoucherStrategy.cs" />
+    <Compile Include="Model\Egm\Devices\LinkedProgressiveDevice.cs" />
+    <Compile Include="Model\Egm\LinkedProgressiveLine.cs" />
+    <Compile Include="Model\Egm\MeterRequestExpiryTracker.cs" />
+    <Compile Include="Model\Egm\Meters\CreditMeterCalculator.cs" />
+    <Compile Include="Model\Egm\Meters\MeterRepository.cs" />
+    <Compile Include="Model\Egm\Meters\MeterService.cs" />
+    <Compile Include="Model\Egm\PendingJackpot.cs" />
+    <Compile Include="Model\Egm\MeterIdDictionaryExtension.cs" />
+    <Compile Include="Model\Egm\MeterId.cs" />
+    <Compile Include="Model\Egm\PendingTicketTransaction.cs" />
+    <Compile Include="Model\Egm\RamClearDetector.cs" />
+    <Compile Include="Model\Egm\SerializableListExtension.cs" />
+    <Compile Include="Model\Egm\SplitTimeInterval.cs" />
+    <Compile Include="Model\Egm\TicketPrinted.cs" />
+    <Compile Include="Model\Egm\TicketRedeemed.cs" />
+    <Compile Include="Model\EnumExtensions.cs" />
+    <Compile Include="Model\EventsListeners\CabinetEventsListener.cs" />
+    <Compile Include="Model\EventsListeners\JackpotEventListener.cs" />
+    <Compile Include="Model\EventsListeners\TicketEventListener.cs" />
+    <Compile Include="Model\Handlers\DepositTransaction.cs" />
+    <Compile Include="Model\Handlers\LinkedProgressiveHandler.cs" />
+    <Compile Include="Model\Handlers\QComTransaction.cs" />
+    <Compile Include="Model\Handlers\VoucherHandler.cs" />
+    <Compile Include="Model\Handlers\WithdrawalTransaction.cs" />
+    <Compile Include="Model\IdleModeCounter.cs" />
+    <Compile Include="Model\Handlers\ElectronicCreditTransferHandler.cs" />
+    <Compile Include="Model\EdgeDetector.cs" />
+    <Compile Include="Model\Egm\DoorKeyedCollection.cs" />
+    <Compile Include="Model\Egm\DoorStatusProcessor.cs" />
+    <Compile Include="Model\Egm\EgmAdapter.cs" />
+    <Compile Include="Model\Egm\EgmModel.cs" />
+    <Compile Include="Model\Egm\EgmObserverCollection.cs" />
+    <Compile Include="Model\Egm\EgmObserverEventQueue.cs" />
+    <Compile Include="Model\Egm\Game.cs" />
+    <Compile Include="Model\Egm\GameCollection.cs" />
+    <Compile Include="Model\Interfaces\IFundsTransferHandler.cs" />
+    <Compile Include="Model\Egm\Voucher.cs" />
+    <Compile Include="Model\EventsListeners\CoinAcceptorListener.cs" />
+    <Compile Include="Model\EventsListeners\DoorEventListener.cs" />
+    <Compile Include="Model\EventsListeners\DoorEventsMapping.cs" />
+    <Compile Include="Model\EventsListeners\DuplicateEventsFilter.cs" />
+    <Compile Include="Model\EventsListeners\EgmEventFaultMapping.cs" />
+    <Compile Include="Model\EventsListeners\EventListenerBase.cs" />
+    <Compile Include="Model\EventsListeners\EventListenerCollection.cs" />
+    <Compile Include="Model\EventsListeners\FaultEventListener.cs" />
+    <Compile Include="Model\EventsListeners\FundsTransferEventListener.cs" />
+    <Compile Include="Model\EventsListeners\HopperEventListener.cs" />
+    <Compile Include="Model\EventsListeners\NoteAcceptorEventListener.cs" />
+    <Compile Include="Model\EventsListeners\PrinterEventsListener.cs" />
+    <Compile Include="Model\LPBroadcastScheduler.cs" />
+    <Compile Include="Model\MessageProcessors\MultiGameVariationMetersProcessor.cs" />
+    <Compile Include="Model\MessageReceivedCounter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Model\MeterChangedDetector.cs" />
+    <Compile Include="Model\Meters\MeterCodeIdMapping.cs" />
+    <Compile Include="Model\Meters\MeterGroup.cs" />
+    <Compile Include="Model\Meters\MeterGroupKeyedCollection.cs" />
+    <Compile Include="Model\Specifications\MeterResetSpecification.cs" />
+    <Compile Include="Model\Meters\MeterTracker.cs" />
+    <Compile Include="Model\Meters\MeterTypeGroupMetersMapping.cs" />
+    <Compile Include="Model\MessageProcessors\EgmConfigurationProcessor.cs" />
+    <Compile Include="Model\MessageProcessors\ElectronicCreditTransferResponseProcessor.cs" />
+    <Compile Include="Model\MessageProcessors\GeneralResponseProcessor.cs" />
+    <Compile Include="Model\MessageProcessors\MessageProcessor.cs" />
+    <Compile Include="Model\Builders\MessageBuilder.cs" />
+    <Compile Include="Model\PollQueue.cs" />
+    <Compile Include="Model\PollSequenceNumberSupplier.cs" />
+    <Compile Include="Model\MessageProcessors\PurgeEventsAckResponseProcessor.cs" />
+    <Compile Include="Model\MessageProcessors\ProcessorCollection.cs" />
+    <Compile Include="Model\Scheduler.cs" />
+    <Compile Include="Model\Spam\SpamText.cs" />
+    <Compile Include="Model\Specifications\NullSpecification.cs" />
+    <Compile Include="Model\Specifications\ProgressiveConfigurationRequestSpecification.cs" />
+    <Compile Include="Model\Specifications\ProgressiveConfigurationValidationSpecification.cs" />
+    <Compile Include="Model\Specifications\ProgressiveMetersValidationSpecification.cs" />
+    <Compile Include="Model\Specifications\SerialNumberValidationSpecification.cs" />
+    <Compile Include="Model\Specifications\QComResponseSpecification.cs" />
+    <Compile Include="Model\Specifications\SpecificationFactory.cs" />
+    <Compile Include="Model\Specifications\SpecificationKeyedCollection.cs" />
+    <Compile Include="Model\States\ConfiguringState.cs" />
+    <Compile Include="Model\States\ConnectingState.cs" />
+    <Compile Include="Model\States\ReconfiguringState.cs" />
+    <Compile Include="Model\States\RunningState.cs" />
+    <Compile Include="Model\States\InitializingState.cs" />
+    <Compile Include="Model\States\ConnectedState.cs" />
+    <Compile Include="Model\States\DisconnectedState.cs" />
+    <Compile Include="Model\States\DiscoveringState.cs" />
+    <Compile Include="Model\GeneratedCode.cs" />
+    <Compile Include="Model\IQComModel.cs" />
+    <Compile Include="Model\LinkObserverCollection.cs" />
+    <Compile Include="Model\QComModel.cs" />
+    <Compile Include="Model\States\State.cs" />
+    <Compile Include="EgmPoller.cs" />
+    <Compile Include="Model\States\ValidatingState.cs" />
+    <Compile Include="Model\StringExtensions.cs" />
+    <Compile Include="Model\Handlers\SystemLockUpHandler.cs" />
+    <Compile Include="PollCycle.cs" />
+    <Compile Include="QComCommon.cs" />
+    <Compile Include="QComDriver.cs" />
+    <Compile Include="QComPortWrapper.cs" />
+    <Compile Include="Messages\Message.cs" />
+    <Compile Include="Messages\EncodedIO.cs" />
+    <Compile Include="Messages\QComMessages.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QComListeningDriver.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CodeGeneration.xml" />
+    <Content Include="CodeGenerationPostBuild.xml" />
+    <Content Include="Messages\QComMessages.xml" />
+    <EmbeddedResource Include="Metadata\QComMetadata.xml" />
+    <Content Include="Messages\QComMetadata.ExtractedEnumerations.xml" />
+    <Content Include="Metadata\QComMetadata.ExtractEnumurations.xslt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BallyTech.Gtm.Core\BallyTech.Gtm.Core.csproj">
+      <Project>{A7078F58-EC1B-446B-98B9-FBCDADA08AF0}</Project>
+      <Name>BallyTech.Gtm.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BallyTech.Gtm\BallyTech.Gtm.csproj">
+      <Project>{99DC0621-1E18-42B3-A4F1-4CD803B85DBA}</Project>
+      <Name>BallyTech.Gtm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BallyTech.Utility\BallyTech.Utility.csproj">
+      <Project>{A27D3E6E-3375-42E0-AB57-C9AECB3EF1E0}</Project>
+      <Name>BallyTech.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CompactFormatter\CompactFormatter.csproj">
+      <Project>{F4E6C43F-0246-428B-A195-2259125EDF2B}</Project>
+      <Name>CompactFormatter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\log4net-1.2.10\src\log4net-cf2.0.csproj">
+      <Project>{DEF54378-B980-40BB-8228-90CEF7738F01}</Project>
+      <Name>log4net-cf2.0</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Metadata\QComMetadata.xsd" />
+  </ItemGroup>
+  <Import Project="$(SolutionDir)BallyTech.CodeGeneration.CompactFramework.Csharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

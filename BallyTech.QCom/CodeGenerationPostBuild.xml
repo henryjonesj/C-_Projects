@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<job>
+  <pipeline>
+    <filter type="BallyTech.CodeGeneration.CompactFormatter.GenerateICSerializable, BallyTech.CodeGeneration.CompactFormatter">
+      <property name="AssemblyPath">bin\%ConfigurationName%\BallyTech.QCom.dll</property>
+    </filter>
+    <filter type="BallyTech.CodeGeneration.Core.OutputWriter, BallyTech.CodeGeneration.Core">
+      <property name="OutputFile">ICSerializableImpl.cs</property>
+      <property name="FailBuildOnChange">true</property>
+    </filter>
+  </pipeline>
+</job>
